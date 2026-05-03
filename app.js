@@ -491,9 +491,13 @@ function initGame(puzzles, mode, forcedId = null) {
     }
 
     // Persist hint usage BEFORE painting, so if the page reloads
-    // mid-animation, the spent state is preserved.
+    // mid-animation, the spent state is preserved. Update only the
+    // Hint button — do NOT call render(), because render() rebuilds
+    // the board (innerHTML = "") and would wipe the inline styles
+    // we are about to apply.
     state.hintsUsed += 1;
     saveState(state.storageKey, state.persist());
+    setHintEnabled(state);
 
     // Paint inline so the highlight cannot be defeated by stale CSS
     // or service worker caches. Class is added too for nicer pulse on
@@ -547,7 +551,8 @@ function initGame(puzzles, mode, forcedId = null) {
     }, HINT_HIGHLIGHT_MS);
 
     showToast("Hint: these 4 belong together");
-    render(state);
+    // Intentionally not calling render(): it would call renderBoard()
+    // which rebuilds every tile from scratch and wipe our paint.
   }
 
   els.submitBtn.onclick = submit;
