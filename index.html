@@ -159,6 +159,41 @@
     </div>
   </dialog>
 
+  <dialog class="modal" id="gamesModal" aria-labelledby="gamesTitle">
+    <div class="modalInner">
+      <div class="modalTop">
+        <h2 id="gamesTitle">More Games</h2>
+        <button class="iconBtn" data-close="gamesModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody gamesBody">
+        <div class="kindness">
+          <p class="kind-headline">Aloha kākou.</p>
+          <p>ʻO wau ʻo Olin Kealoha Lagon. Here are the other Hawaiian language games I have gifted. They are all open source. Make a copy, edit it, re-release as your own version, or contact me if you want to take one over.</p>
+        </div>
+
+        <div class="gameItem">
+          <h3><a href="https://olelodaily.com" target="_blank" rel="noopener">OleloDaily.com</a></h3>
+          <p>A daily ʻŌlelo Hawaiʻi vocabulary trainer. Bite-sized rounds, gentle streaks, an essentials track and a fluency track. The goal is small daily reps that compound, not a marathon. Built for learners who want to keep showing up.</p>
+        </div>
+
+        <div class="gameItem">
+          <h3><a href="https://shiftywords.com" target="_blank" rel="noopener">ShiftyWords.com</a></h3>
+          <p>A daily 5-letter word puzzle in six languages, including ʻŌlelo Hawaiʻi. Switch the puzzle into Hawaiian from the footer language picker. Your streak is tracked separately for each language so you can keep one going in English and start a fresh one in Hawaiian.</p>
+        </div>
+
+        <div class="gameItem">
+          <h3><a href="https://olagon.github.io/MokuMatch/" target="_blank" rel="noopener">MokuMatch</a></h3>
+          <p>A Hawaiʻi place-knowledge game. Most people who grew up in Hawaiʻi can name the islands. Fewer can name the moku. Fewer still can place an ahupuaʻa. These names tell you where the water flowed, who lived there, who fished, and what was grown. MokuMatch uses live State of Hawaiʻi GIS data to teach the mokupuni, moku, and ahupuaʻa map one tap at a time.</p>
+        </div>
+
+        <p class="mahalo">Mahalo for playing and learning Hawaiian.</p>
+      </div>
+      <div class="modalBottom">
+        <button class="btn primary" data-close="gamesModal" type="button">Close</button>
+      </div>
+    </div>
+  </dialog>
+
   <dialog class="modal" id="archiveModal" aria-labelledby="archiveTitle">
     <div class="modalInner">
       <div class="modalTop">
@@ -182,25 +217,38 @@
   <footer>
     <span class="footer-line">Built with aloha by <a href="https://www.linkedin.com/in/olinlagon/" target="_blank" rel="noopener">Olin Kealoha Lagon</a></span>
     <span class="footer-line"><a href="https://github.com/olagon/rootz" target="_blank" rel="noopener">Open source</a> &middot; <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a> &middot; No ads</span>
-    <span class="footer-line"><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="https://www.linkedin.com/in/olinlagon/" target="_blank" rel="noopener">Send feedback</a></span>
-    <span class="footer-line">More games &middot; <a href="https://olelodaily.com/" target="_blank" rel="noopener">ʻŌlelo Daily</a> (master 2,000 Hawaiian words)</span>
+    <span class="footer-line"><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="#" id="footer-games-link">More Games</a> &middot; <a href="https://www.linkedin.com/in/olinlagon/" target="_blank" rel="noopener">Send feedback</a></span>
     <span class="footer-line footer-version">© 2026 &middot; v1.0</span>
   </footer>
 
   <script>
     (function(){
       var btn = document.getElementById('themeBtn');
-      if(!btn) return;
-      btn.addEventListener('click', function(){
-        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        if(isDark){
-          document.documentElement.removeAttribute('data-theme');
-          try{ localStorage.setItem('rootz_theme', 'light'); }catch(e){}
-        }else{
-          document.documentElement.setAttribute('data-theme', 'dark');
-          try{ localStorage.setItem('rootz_theme', 'dark'); }catch(e){}
-        }
-      });
+      if(btn){
+        btn.addEventListener('click', function(){
+          var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          if(isDark){
+            document.documentElement.removeAttribute('data-theme');
+            try{ localStorage.setItem('rootz_theme', 'light'); }catch(e){}
+          }else{
+            document.documentElement.setAttribute('data-theme', 'dark');
+            try{ localStorage.setItem('rootz_theme', 'dark'); }catch(e){}
+          }
+        });
+      }
+
+      var gamesLink = document.getElementById('footer-games-link');
+      var gamesModal = document.getElementById('gamesModal');
+      if(gamesLink && gamesModal){
+        gamesLink.addEventListener('click', function(e){
+          e.preventDefault();
+          if(typeof gamesModal.showModal === 'function'){
+            if(!gamesModal.open) gamesModal.showModal();
+          }else{
+            gamesModal.setAttribute('open', '');
+          }
+        });
+      }
     })();
   </script>
 
