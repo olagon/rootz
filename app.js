@@ -3,6 +3,7 @@
 
 const PUZZLES_URL = "./puzzles.json";
 const MAX_MISTAKES = 4;
+const HINT_HIGHLIGHT_MS = 4000;
 
 const els = {
   subtitle: document.getElementById("subtitle"),
@@ -10,6 +11,7 @@ const els = {
   mistakesLeft: document.getElementById("mistakesLeft"),
   solvedGroups: document.getElementById("solvedGroups"),
   board: document.getElementById("board"),
+  hintBtn: document.getElementById("hintBtn"),
   shuffleBtn: document.getElementById("shuffleBtn"),
   clearBtn: document.getElementById("clearBtn"),
   submitBtn: document.getElementById("submitBtn"),
@@ -132,6 +134,34 @@ function setSubmitEnabled(state) {
   els.submitBtn.disabled = state.selected.length !== 4 || state.isOver;
 }
 
+function unsolvedGroups(state) {
+  const solvedKeys = new Set(state.solved.map(s => normalizeSet(s.words)));
+  return state.groups.filter(g => !solvedKeys.has(g.setKey));
+}
+
+function hintsAvailable(state) {
+  if (state.mode === "practice") return Infinity;
+  return Math.max(0, state.maxHints - state.hintsUsed);
+}
+
+function setHintEnabled(state) {
+  if (!els.hintBtn) return;
+  const noUnsolved = unsolvedGroups(state).length === 0;
+  const used = hintsAvailable(state) <= 0;
+  const off = state.isOver || noUnsolved || used;
+  els.hintBtn.disabled = off;
+  els.hintBtn.classList.toggle("spent", used && !state.isOver);
+  if (state.mode === "practice") {
+    els.hintBtn.title = "Hint";
+  } else if (used) {
+    els.hintBtn.title = state.mode === "daily"
+      ? "Hint already used today"
+      : "Hint already used for this puzzle";
+  } else {
+    els.hintBtn.title = "Use your one hint for this puzzle";
+  }
+}
+
 function renderSolved(state) {
   els.solvedGroups.innerHTML = "";
   for (const solved of state.solved) {
@@ -203,6 +233,7 @@ function render(state) {
   renderSolved(state);
   renderBoard(state);
   setSubmitEnabled(state);
+  setHintEnabled(state);
   saveState(state.storageKey, state.persist());
 }
 
@@ -343,6 +374,8 @@ function initGame(puzzles, mode, forcedId = null) {
     mistakesLeft: MAX_MISTAKES,
     isOver: false,
     attempts: [],
+    hintsUsed: 0,
+    maxHints: 1,
     storageKey,
     persist() {
       return {
@@ -354,6 +387,7 @@ function initGame(puzzles, mode, forcedId = null) {
         mistakesLeft: this.mistakesLeft,
         isOver: this.isOver,
         attempts: this.attempts,
+        hintsUsed: this.hintsUsed,
       };
     },
   };
@@ -364,6 +398,7 @@ function initGame(puzzles, mode, forcedId = null) {
     state.mistakesLeft = typeof persisted.mistakesLeft === "number" ? persisted.mistakesLeft : MAX_MISTAKES;
     state.isOver = !!persisted.isOver;
     state.attempts = persisted.attempts || [];
+    state.hintsUsed = typeof persisted.hintsUsed === "number" ? persisted.hintsUsed : 0;
   }
 
   // Normalize solved groups with colors
@@ -436,9 +471,36 @@ function initGame(puzzles, mode, forcedId = null) {
     render(state);
   }
 
+  function useHint() {
+    if (state.isOver) return;
+    if (hintsAvailable(state) <= 0) {
+      showToast(state.mode === "daily" ? "Hint already used today" : "Hint already used");
+      return;
+    }
+    const candidates = unsolvedGroups(state);
+    if (candidates.length === 0) return;
+
+    const group = candidates[Math.floor(Math.random() * candidates.length)];
+    const wordSet = new Set(group.words);
+    const tiles = [...els.board.querySelectorAll(".tile")]
+      .filter(t => wordSet.has(t.dataset.word));
+
+    if (tiles.length === 0) return;
+
+    tiles.forEach(t => t.classList.add("hinted"));
+    setTimeout(() => {
+      tiles.forEach(t => t.classList.remove("hinted"));
+    }, HINT_HIGHLIGHT_MS);
+
+    state.hintsUsed += 1;
+    showToast("Hint: these 4 belong together");
+    render(state);
+  }
+
   els.submitBtn.onclick = submit;
   els.clearBtn.onclick = clearSelection;
   els.shuffleBtn.onclick = shuffleBoard;
+  if (els.hintBtn) els.hintBtn.onclick = useHint;
 
   els.howBtn.onclick = () => openModal(els.howModal);
   els.statsBtn.onclick = () => { updateStatsUI(); openModal(els.statsModal); };
