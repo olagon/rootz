@@ -1,5 +1,5 @@
 // Simple offline cache for Rootz
-const CACHE = "rootz-v4";
+const CACHE = "rootz-v5";
 const ASSETS = [
   "./",
   "./index.html",

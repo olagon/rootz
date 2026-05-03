@@ -1768,5 +1768,2955 @@
       "waʻa",
       "ʻili"
     ]
+  },
+  {
+    "id": 31,
+    "groups": [
+      {
+        "label": "Numbers 13-16",
+        "words": [
+          "ʻumikūmākolu",
+          "ʻumikūmāhā",
+          "ʻumikūmālima",
+          "ʻumikūmāono"
+        ]
+      },
+      {
+        "label": "Numbers 17-20",
+        "words": [
+          "ʻumikūmāhiku",
+          "ʻumikūmāwalu",
+          "ʻumikūmāiwa",
+          "iwakālua"
+        ]
+      },
+      {
+        "label": "Tens 30-60",
+        "words": [
+          "kanakolu",
+          "kanahā",
+          "kanalima",
+          "kanaono"
+        ]
+      },
+      {
+        "label": "Tens 70-100",
+        "words": [
+          "kanahiku",
+          "kanawalu",
+          "kanaiwa",
+          "haneli"
+        ]
+      }
+    ],
+    "boardWords": [
+      "ʻumikūmāono",
+      "kanahā",
+      "kanakolu",
+      "kanaono",
+      "ʻumikūmāwalu",
+      "kanaiwa",
+      "ʻumikūmāhiku",
+      "kanawalu",
+      "kanalima",
+      "haneli",
+      "ʻumikūmālima",
+      "ʻumikūmāiwa",
+      "kanahiku",
+      "ʻumikūmāhā",
+      "iwakālua",
+      "ʻumikūmākolu"
+    ]
+  },
+  {
+    "id": 32,
+    "groups": [
+      {
+        "label": "Months Sep-Dec",
+        "words": [
+          "Kepakemapa",
+          "ʻOkakopa",
+          "Nowemapa",
+          "Kēkēmapa"
+        ]
+      },
+      {
+        "label": "Months Jan-Apr",
+        "words": [
+          "Ianuali",
+          "Pepeluali",
+          "Malaki",
+          "ʻApelila"
+        ]
+      },
+      {
+        "label": "Months May-Aug",
+        "words": [
+          "Mei",
+          "Iune",
+          "Iulai",
+          "ʻAukake"
+        ]
+      },
+      {
+        "label": "Time spans",
+        "words": [
+          "lā",
+          "pule",
+          "mahina",
+          "makahiki"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Iulai",
+      "ʻOkakopa",
+      "Malaki",
+      "Pepeluali",
+      "ʻAukake",
+      "lā",
+      "Iune",
+      "Mei",
+      "Kepakemapa",
+      "ʻApelila",
+      "pule",
+      "Ianuali",
+      "makahiki",
+      "Kēkēmapa",
+      "mahina",
+      "Nowemapa"
+    ]
+  },
+  {
+    "id": 33,
+    "groups": [
+      {
+        "label": "Main Islands",
+        "words": [
+          "Hawaiʻi",
+          "Maui",
+          "Oʻahu",
+          "Kauaʻi"
+        ]
+      },
+      {
+        "label": "Smaller Islands",
+        "words": [
+          "Molokaʻi",
+          "Lānaʻi",
+          "Niʻihau",
+          "Kahoʻolawe"
+        ]
+      },
+      {
+        "label": "Major Mountains",
+        "words": [
+          "Mauna Kea",
+          "Mauna Loa",
+          "Haleakalā",
+          "Hualālai"
+        ]
+      },
+      {
+        "label": "Famous Valleys",
+        "words": [
+          "Waipiʻo",
+          "Hālawa",
+          "Mānoa",
+          "Waimea"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hawaiʻi",
+      "Maui",
+      "Hālawa",
+      "Hualālai",
+      "Niʻihau",
+      "Waipiʻo",
+      "Waimea",
+      "Oʻahu",
+      "Mauna Loa",
+      "Mauna Kea",
+      "Mānoa",
+      "Kahoʻolawe",
+      "Molokaʻi",
+      "Kauaʻi",
+      "Haleakalā",
+      "Lānaʻi"
+    ]
+  },
+  {
+    "id": 34,
+    "groups": [
+      {
+        "label": "Forest Birds",
+        "words": [
+          "ʻIʻiwi",
+          "ʻAmakihi",
+          "ʻElepaio",
+          "ʻApapane"
+        ]
+      },
+      {
+        "label": "Larger Birds",
+        "words": [
+          "Nēnē",
+          "Pueo",
+          "ʻIo",
+          "ʻAlalā"
+        ]
+      },
+      {
+        "label": "Sea Mammals",
+        "words": [
+          "Naiʻa",
+          "Koholā",
+          "ʻĪlioholoikauaua",
+          "Kohola nui"
+        ]
+      },
+      {
+        "label": "Reef Life",
+        "words": [
+          "Honu",
+          "Manō",
+          "Heʻe",
+          "Wana"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Heʻe",
+      "Honu",
+      "Nēnē",
+      "Naiʻa",
+      "Wana",
+      "ʻAlalā",
+      "ʻElepaio",
+      "ʻĪlioholoikauaua",
+      "ʻAmakihi",
+      "Pueo",
+      "ʻIo",
+      "Manō",
+      "ʻApapane",
+      "ʻIʻiwi",
+      "Koholā",
+      "Kohola nui"
+    ]
+  },
+  {
+    "id": 35,
+    "groups": [
+      {
+        "label": "Native Trees",
+        "words": [
+          "Koa",
+          "ʻŌhiʻa",
+          "Kukui",
+          "Hala"
+        ]
+      },
+      {
+        "label": "Lei Flowers",
+        "words": [
+          "Pīkake",
+          "Lehua",
+          "Maile",
+          "Pua kenikeni"
+        ]
+      },
+      {
+        "label": "Crops",
+        "words": [
+          "Kalo",
+          "Maiʻa",
+          "ʻUlu",
+          "ʻUala"
+        ]
+      },
+      {
+        "label": "Tropical Trees",
+        "words": [
+          "Niu",
+          "Milo",
+          "Wiliwili",
+          "Naio"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Wiliwili",
+      "ʻŌhiʻa",
+      "Hala",
+      "Naio",
+      "Kalo",
+      "Koa",
+      "Pua kenikeni",
+      "Maiʻa",
+      "Maile",
+      "Pīkake",
+      "Milo",
+      "Lehua",
+      "ʻUala",
+      "Kukui",
+      "Niu",
+      "ʻUlu"
+    ]
+  },
+  {
+    "id": 36,
+    "groups": [
+      {
+        "label": "Lūʻau Dishes",
+        "words": [
+          "Poi",
+          "Laulau",
+          "Kalua",
+          "Haupia"
+        ]
+      },
+      {
+        "label": "Game Fish",
+        "words": [
+          "ʻAhi",
+          "Mahimahi",
+          "Ono",
+          "ʻOpakapaka"
+        ]
+      },
+      {
+        "label": "Reef Fish",
+        "words": [
+          "Humuhumu",
+          "Manini",
+          "Pāpio",
+          "Uhu"
+        ]
+      },
+      {
+        "label": "Shore Catch",
+        "words": [
+          "ʻOpihi",
+          "Pāpai",
+          "Loli",
+          "Hīhīwai"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Manini",
+      "Ono",
+      "Uhu",
+      "Mahimahi",
+      "Haupia",
+      "ʻOpakapaka",
+      "Hīhīwai",
+      "Kalua",
+      "Humuhumu",
+      "Pāpai",
+      "Laulau",
+      "ʻAhi",
+      "ʻOpihi",
+      "Loli",
+      "Poi",
+      "Pāpio"
+    ]
+  },
+  {
+    "id": 37,
+    "groups": [
+      {
+        "label": "Hula Terms",
+        "words": [
+          "Kumu",
+          "Haumāna",
+          "Kahiko",
+          "ʻAuana"
+        ]
+      },
+      {
+        "label": "Hula Roles",
+        "words": [
+          "Hālau",
+          "Hoʻopaʻa",
+          "ʻŌlapa",
+          "Mele"
+        ]
+      },
+      {
+        "label": "Drums and Beats",
+        "words": [
+          "Pahu",
+          "Ipu",
+          "Pūniu",
+          "Kālāʻau"
+        ]
+      },
+      {
+        "label": "Hand Instruments",
+        "words": [
+          "ʻUkulele",
+          "ʻUlīʻulī",
+          "ʻIliʻili",
+          "Pūʻili"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Mele",
+      "Haumāna",
+      "Pūʻili",
+      "ʻŌlapa",
+      "ʻUlīʻulī",
+      "Hālau",
+      "ʻAuana",
+      "Hoʻopaʻa",
+      "Kumu",
+      "Pahu",
+      "ʻUkulele",
+      "Kālāʻau",
+      "Pūniu",
+      "Ipu",
+      "ʻIliʻili",
+      "Kahiko"
+    ]
+  },
+  {
+    "id": 38,
+    "groups": [
+      {
+        "label": "Royal Ranks",
+        "words": [
+          "Mōʻī",
+          "Mōʻīwahine",
+          "Aliʻi",
+          "Kāhili"
+        ]
+      },
+      {
+        "label": "Society Roles",
+        "words": [
+          "Kahuna",
+          "Konohiki",
+          "Makaʻāinana",
+          "Hoʻokele"
+        ]
+      },
+      {
+        "label": "People Words",
+        "words": [
+          "Kanaka",
+          "Kāne",
+          "Wahine",
+          "Keiki"
+        ]
+      },
+      {
+        "label": "Honored Elders",
+        "words": [
+          "Kupuna",
+          "Mākua",
+          "Kūpuna kāne",
+          "Kūpuna wahine"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kūpuna kāne",
+      "Kāhili",
+      "Kanaka",
+      "Aliʻi",
+      "Wahine",
+      "Kahuna",
+      "Mōʻī",
+      "Kāne",
+      "Hoʻokele",
+      "Konohiki",
+      "Kūpuna wahine",
+      "Mōʻīwahine",
+      "Keiki",
+      "Kupuna",
+      "Makaʻāinana",
+      "Mākua"
+    ]
+  },
+  {
+    "id": 39,
+    "groups": [
+      {
+        "label": "Immediate Family",
+        "words": [
+          "Makua kāne",
+          "Makuahine",
+          "Kaikuaʻana",
+          "Kaikaina"
+        ]
+      },
+      {
+        "label": "Sibling Terms",
+        "words": [
+          "Kaikuhine",
+          "Kaikunāne",
+          "Pōkiʻi",
+          "Hānau mua"
+        ]
+      },
+      {
+        "label": "Affection",
+        "words": [
+          "Aloha",
+          "Hoʻokipa",
+          "Lokomaikaʻi",
+          "Mahalo"
+        ]
+      },
+      {
+        "label": "Strong Feelings",
+        "words": [
+          "Huhū",
+          "Hauʻoli",
+          "Kaumaha",
+          "Makau"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hoʻokipa",
+      "Lokomaikaʻi",
+      "Hānau mua",
+      "Aloha",
+      "Makuahine",
+      "Kaikuaʻana",
+      "Kaikunāne",
+      "Kaumaha",
+      "Huhū",
+      "Hauʻoli",
+      "Mahalo",
+      "Kaikaina",
+      "Makua kāne",
+      "Makau",
+      "Kaikuhine",
+      "Pōkiʻi"
+    ]
+  },
+  {
+    "id": 40,
+    "groups": [
+      {
+        "label": "Five Senses",
+        "words": [
+          "ʻIke",
+          "Lohe",
+          "Honi",
+          "Hoʻopā"
+        ]
+      },
+      {
+        "label": "Movement Verbs",
+        "words": [
+          "Hele",
+          "Holo",
+          "Lele",
+          "Hoʻi"
+        ]
+      },
+      {
+        "label": "Water Movement",
+        "words": [
+          "ʻAu",
+          "Luʻu",
+          "Heʻe nalu",
+          "Hoe"
+        ]
+      },
+      {
+        "label": "Up and Down",
+        "words": [
+          "Piʻi",
+          "Iho",
+          "Kū",
+          "Noho"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Lohe",
+      "Heʻe nalu",
+      "Lele",
+      "Piʻi",
+      "Noho",
+      "Hoʻi",
+      "Iho",
+      "Holo",
+      "Honi",
+      "Hoe",
+      "Hele",
+      "Hoʻopā",
+      "ʻIke",
+      "ʻAu",
+      "Luʻu",
+      "Kū"
+    ]
+  },
+  {
+    "id": 41,
+    "groups": [
+      {
+        "label": "Communicate",
+        "words": [
+          "ʻŌlelo",
+          "Kākau",
+          "Heluhelu",
+          "Kelepona"
+        ]
+      },
+      {
+        "label": "Voice and Sound",
+        "words": [
+          "Kāhea",
+          "Walaʻau",
+          "Mele",
+          "Hoʻolohe"
+        ]
+      },
+      {
+        "label": "Learning",
+        "words": [
+          "Aʻo",
+          "Hoʻonaʻauao",
+          "Hoʻomaopopo",
+          "Hoʻomanaʻo"
+        ]
+      },
+      {
+        "label": "Reading Tools",
+        "words": [
+          "Puke",
+          "Niupepa",
+          "Palapala",
+          "Kelepaʻi"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kākau",
+      "Kelepaʻi",
+      "Hoʻomanaʻo",
+      "ʻŌlelo",
+      "Hoʻolohe",
+      "Palapala",
+      "Niupepa",
+      "Hoʻomaopopo",
+      "Aʻo",
+      "Kāhea",
+      "Hoʻonaʻauao",
+      "Mele",
+      "Heluhelu",
+      "Kelepona",
+      "Walaʻau",
+      "Puke"
+    ]
+  },
+  {
+    "id": 42,
+    "groups": [
+      {
+        "label": "Eat and Drink",
+        "words": [
+          "ʻAi",
+          "Inu",
+          "ʻOno",
+          "Pōloli"
+        ]
+      },
+      {
+        "label": "Done Eating",
+        "words": [
+          "Māʻona",
+          "Hāʻawi",
+          "Hānai",
+          "Mālama"
+        ]
+      },
+      {
+        "label": "Rest Words",
+        "words": [
+          "Moe",
+          "Hiamoe",
+          "Hoʻomaha",
+          "Ala"
+        ]
+      },
+      {
+        "label": "Daily Routine",
+        "words": [
+          "Auau",
+          "ʻAʻahu",
+          "Holoi",
+          "Hoʻomākaukau"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Mālama",
+      "Hiamoe",
+      "Hāʻawi",
+      "Hānai",
+      "Holoi",
+      "Hoʻomaha",
+      "Auau",
+      "Moe",
+      "Inu",
+      "ʻOno",
+      "ʻAʻahu",
+      "Hoʻomākaukau",
+      "Māʻona",
+      "Ala",
+      "ʻAi",
+      "Pōloli"
+    ]
+  },
+  {
+    "id": 43,
+    "groups": [
+      {
+        "label": "Bright Colors",
+        "words": [
+          "ʻŌmaʻomaʻo",
+          "Polū",
+          "Poni",
+          "ʻĀlani"
+        ]
+      },
+      {
+        "label": "Soft Colors",
+        "words": [
+          "ʻĀkala",
+          "ʻĀhinahina",
+          "Pālolo",
+          "Hinahina"
+        ]
+      },
+      {
+        "label": "Light and Dark",
+        "words": [
+          "Mālamalama",
+          "Pōuli",
+          "Aka",
+          "Lelele"
+        ]
+      },
+      {
+        "label": "Sky Lights",
+        "words": [
+          "Lā",
+          "Mahina",
+          "Hōkū",
+          "Ānuenue"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Pōuli",
+      "Mālamalama",
+      "Mahina",
+      "ʻŌmaʻomaʻo",
+      "Pālolo",
+      "ʻĀlani",
+      "Hōkū",
+      "Aka",
+      "Ānuenue",
+      "ʻĀhinahina",
+      "Hinahina",
+      "Poni",
+      "Lā",
+      "Lelele",
+      "ʻĀkala",
+      "Polū"
+    ]
+  },
+  {
+    "id": 44,
+    "groups": [
+      {
+        "label": "Wind Names",
+        "words": [
+          "Makani",
+          "Moaʻe",
+          "Kona",
+          "Hoʻolua"
+        ]
+      },
+      {
+        "label": "Rain Names",
+        "words": [
+          "Ua",
+          "Kili",
+          "Naulu",
+          "Hāwana"
+        ]
+      },
+      {
+        "label": "Sky Conditions",
+        "words": [
+          "Ao",
+          "Pō",
+          "Pōkole",
+          "Pōloli"
+        ]
+      },
+      {
+        "label": "Storm Words",
+        "words": [
+          "ʻIno",
+          "Hekili",
+          "Uila",
+          "Pukamoana"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kili",
+      "Pōkole",
+      "Pukamoana",
+      "Hāwana",
+      "Pō",
+      "ʻIno",
+      "Makani",
+      "Ua",
+      "Hoʻolua",
+      "Naulu",
+      "Kona",
+      "Moaʻe",
+      "Pōloli",
+      "Uila",
+      "Ao",
+      "Hekili"
+    ]
+  },
+  {
+    "id": 45,
+    "groups": [
+      {
+        "label": "Mauka to Makai",
+        "words": [
+          "Mauka",
+          "Makai",
+          "Wao",
+          "Kahakai"
+        ]
+      },
+      {
+        "label": "Mountain Zones",
+        "words": [
+          "Kuahiwi",
+          "Pali",
+          "Kīpuka",
+          "Mauna"
+        ]
+      },
+      {
+        "label": "Coast Words",
+        "words": [
+          "Kahaone",
+          "Kaiapuni",
+          "Kaiākea",
+          "Kūʻono"
+        ]
+      },
+      {
+        "label": "Inland Features",
+        "words": [
+          "Awāwa",
+          "Lua",
+          "Pahu",
+          "Wai"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Pahu",
+      "Lua",
+      "Kaiākea",
+      "Wao",
+      "Kaiapuni",
+      "Wai",
+      "Kahakai",
+      "Kūʻono",
+      "Mauka",
+      "Pali",
+      "Awāwa",
+      "Makai",
+      "Kuahiwi",
+      "Mauna",
+      "Kīpuka",
+      "Kahaone"
+    ]
+  },
+  {
+    "id": 46,
+    "groups": [
+      {
+        "label": "Head and Face",
+        "words": [
+          "Poʻo",
+          "Maka",
+          "Ihu",
+          "Waha"
+        ]
+      },
+      {
+        "label": "Face Details",
+        "words": [
+          "Pepeiao",
+          "Lae",
+          "Niho",
+          "Auwae"
+        ]
+      },
+      {
+        "label": "Hair and Skin",
+        "words": [
+          "Lauoho",
+          "ʻIli",
+          "Kuʻekuʻe",
+          "Papālina"
+        ]
+      },
+      {
+        "label": "Speech Parts",
+        "words": [
+          "Leo",
+          "Alelo",
+          "Lehelehe",
+          "Puʻu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Maka",
+      "Pepeiao",
+      "Kuʻekuʻe",
+      "Lae",
+      "Papālina",
+      "Lehelehe",
+      "Auwae",
+      "Alelo",
+      "Puʻu",
+      "Lauoho",
+      "Waha",
+      "Leo",
+      "ʻIli",
+      "Poʻo",
+      "Niho",
+      "Ihu"
+    ]
+  },
+  {
+    "id": 47,
+    "groups": [
+      {
+        "label": "Arms and Hands",
+        "words": [
+          "Lima",
+          "Manamana lima",
+          "Kuʻe",
+          "Poho lima"
+        ]
+      },
+      {
+        "label": "Legs and Feet",
+        "words": [
+          "Wāwae",
+          "Manamana wāwae",
+          "Kuli",
+          "Kapuaʻi"
+        ]
+      },
+      {
+        "label": "Trunk Parts",
+        "words": [
+          "Umauma",
+          "ʻŌpū",
+          "Kua",
+          "ʻĀʻī"
+        ]
+      },
+      {
+        "label": "Inside Body",
+        "words": [
+          "Puʻuwai",
+          "Akemāmā",
+          "Iwi",
+          "Koko"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Iwi",
+      "Kua",
+      "Kuʻe",
+      "Koko",
+      "Lima",
+      "Puʻuwai",
+      "Poho lima",
+      "Akemāmā",
+      "Wāwae",
+      "Manamana wāwae",
+      "ʻŌpū",
+      "Kapuaʻi",
+      "Umauma",
+      "Kuli",
+      "Manamana lima",
+      "ʻĀʻī"
+    ]
+  },
+  {
+    "id": 48,
+    "groups": [
+      {
+        "label": "Cooking Verbs",
+        "words": [
+          "Kuke",
+          "Hoʻomoa",
+          "Pūlehu",
+          "Kālua"
+        ]
+      },
+      {
+        "label": "Imu Day",
+        "words": [
+          "Imu",
+          "Pōhaku",
+          "Lau",
+          "Honua"
+        ]
+      },
+      {
+        "label": "Kitchen Items",
+        "words": [
+          "Pā",
+          "Pahi",
+          "Kīʻaha",
+          "ʻUmeke"
+        ]
+      },
+      {
+        "label": "Tastes",
+        "words": [
+          "ʻAwaʻawa",
+          "Mikomiko",
+          "ʻAla",
+          "Mānalo"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Pōhaku",
+      "Mānalo",
+      "ʻAla",
+      "Pahi",
+      "Kuke",
+      "Honua",
+      "Hoʻomoa",
+      "Lau",
+      "Kālua",
+      "ʻAwaʻawa",
+      "Imu",
+      "Mikomiko",
+      "ʻUmeke",
+      "Pā",
+      "Pūlehu",
+      "Kīʻaha"
+    ]
+  },
+  {
+    "id": 49,
+    "groups": [
+      {
+        "label": "Cloth and Fiber",
+        "words": [
+          "Kapa",
+          "Lauhala",
+          "ʻAhu",
+          "Malo"
+        ]
+      },
+      {
+        "label": "Make and Build",
+        "words": [
+          "Ulana",
+          "Hili",
+          "Humu",
+          "Kālai"
+        ]
+      },
+      {
+        "label": "Tools",
+        "words": [
+          "Kōʻī",
+          "ʻŌʻō",
+          "Iʻe kuku",
+          "Pōhaku kuʻi ʻai"
+        ]
+      },
+      {
+        "label": "Containers",
+        "words": [
+          "Ipu",
+          "ʻUmeke",
+          "Paʻakai",
+          "Hue"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Ulana",
+      "Kālai",
+      "Malo",
+      "Ipu",
+      "Hue",
+      "Pōhaku kuʻi ʻai",
+      "ʻUmeke",
+      "ʻŌʻō",
+      "Kapa",
+      "Iʻe kuku",
+      "Kōʻī",
+      "Paʻakai",
+      "Lauhala",
+      "Humu",
+      "Hili",
+      "ʻAhu"
+    ]
+  },
+  {
+    "id": 50,
+    "groups": [
+      {
+        "label": "Traditional Play",
+        "words": [
+          "Ulu maika",
+          "Holua",
+          "Mokomoko",
+          "Kōnane"
+        ]
+      },
+      {
+        "label": "Today Sports",
+        "words": [
+          "Pōpeku",
+          "Pōhīnaʻi",
+          "Heihei",
+          "Pāʻani"
+        ]
+      },
+      {
+        "label": "Ocean Sports",
+        "words": [
+          "Heʻe nalu",
+          "Hoe waʻa",
+          "Luʻu",
+          "Lawaiʻa"
+        ]
+      },
+      {
+        "label": "Wayfinding",
+        "words": [
+          "Hōkūleʻa",
+          "Hōkūpaʻa",
+          "Hoʻokele",
+          "Pe ʻa"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Heʻe nalu",
+      "Heihei",
+      "Lawaiʻa",
+      "Ulu maika",
+      "Hoe waʻa",
+      "Mokomoko",
+      "Hoʻokele",
+      "Holua",
+      "Hōkūleʻa",
+      "Pāʻani",
+      "Kōnane",
+      "Luʻu",
+      "Pōhīnaʻi",
+      "Pōpeku",
+      "Hōkūpaʻa",
+      "Pe ʻa"
+    ]
+  },
+  {
+    "id": 51,
+    "groups": [
+      {
+        "label": "Canoe Parts",
+        "words": [
+          "Waʻa",
+          "Iako",
+          "Ama",
+          "Hoe"
+        ]
+      },
+      {
+        "label": "Sail and Mast",
+        "words": [
+          "Pe ʻa",
+          "Kia",
+          "Kaula",
+          "Lupe"
+        ]
+      },
+      {
+        "label": "Sea Conditions",
+        "words": [
+          "Kai",
+          "Nalu",
+          "ʻEhu",
+          "ʻOpu"
+        ]
+      },
+      {
+        "label": "Crew Roles",
+        "words": [
+          "Hoʻokele",
+          "Kālai",
+          "Kūpaʻa",
+          "Aliʻi"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Waʻa",
+      "Iako",
+      "ʻOpu",
+      "Kia",
+      "Aliʻi",
+      "Nalu",
+      "Kaula",
+      "Pe ʻa",
+      "Hoʻokele",
+      "ʻEhu",
+      "Hoe",
+      "Ama",
+      "Kūpaʻa",
+      "Kai",
+      "Kālai",
+      "Lupe"
+    ]
+  },
+  {
+    "id": 52,
+    "groups": [
+      {
+        "label": "Sick or Well",
+        "words": [
+          "Maʻi",
+          "Ola",
+          "Eha",
+          "Pilikia"
+        ]
+      },
+      {
+        "label": "Healing",
+        "words": [
+          "Lāʻau",
+          "Lapaʻau",
+          "Hoʻōla",
+          "Kāhuna lapaʻau"
+        ]
+      },
+      {
+        "label": "Body Care",
+        "words": [
+          "Auau",
+          "Holoi",
+          "Hoʻomaha",
+          "Inu wai"
+        ]
+      },
+      {
+        "label": "Strong Body",
+        "words": [
+          "Ikaika",
+          "Akamai",
+          "Mākaukau",
+          "Hoʻoikaika"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hoʻomaha",
+      "Ikaika",
+      "Lāʻau",
+      "Akamai",
+      "Holoi",
+      "Pilikia",
+      "Ola",
+      "Eha",
+      "Mākaukau",
+      "Hoʻōla",
+      "Lapaʻau",
+      "Kāhuna lapaʻau",
+      "Hoʻoikaika",
+      "Inu wai",
+      "Maʻi",
+      "Auau"
+    ]
+  },
+  {
+    "id": 53,
+    "groups": [
+      {
+        "label": "Hello Words",
+        "words": [
+          "Aloha",
+          "Welina",
+          "E komo mai",
+          "Pehea"
+        ]
+      },
+      {
+        "label": "Thank and Yes",
+        "words": [
+          "Mahalo",
+          "ʻAe",
+          "Maikaʻi",
+          "Hoihoi"
+        ]
+      },
+      {
+        "label": "No and Stop",
+        "words": [
+          "ʻAʻole",
+          "Kāpae",
+          "Hoʻōki",
+          "ʻAʻohe"
+        ]
+      },
+      {
+        "label": "Until Next Time",
+        "words": [
+          "A hui hou",
+          "Aloha ʻoe",
+          "Mālama pono",
+          "E ola"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Mahalo",
+      "Kāpae",
+      "Pehea",
+      "E komo mai",
+      "Welina",
+      "Hoʻōki",
+      "E ola",
+      "Aloha",
+      "A hui hou",
+      "ʻAe",
+      "Aloha ʻoe",
+      "Mālama pono",
+      "ʻAʻohe",
+      "ʻAʻole",
+      "Hoihoi",
+      "Maikaʻi"
+    ]
+  },
+  {
+    "id": 54,
+    "groups": [
+      {
+        "label": "School Roles",
+        "words": [
+          "Kumu",
+          "Haumāna",
+          "Pelekikena",
+          "Limahana"
+        ]
+      },
+      {
+        "label": "School Items",
+        "words": [
+          "Puke",
+          "Penikala",
+          "Pepa",
+          "Papa"
+        ]
+      },
+      {
+        "label": "Subjects",
+        "words": [
+          "Makemakika",
+          "Mōʻaukala",
+          "ʻEpekema",
+          "Hawaiʻi"
+        ]
+      },
+      {
+        "label": "School Verbs",
+        "words": [
+          "Aʻo",
+          "Heluhelu",
+          "Kākau",
+          "Helu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Penikala",
+      "Kumu",
+      "Mōʻaukala",
+      "Haumāna",
+      "Heluhelu",
+      "Aʻo",
+      "Pelekikena",
+      "ʻEpekema",
+      "Limahana",
+      "Pepa",
+      "Hawaiʻi",
+      "Kākau",
+      "Helu",
+      "Makemakika",
+      "Papa",
+      "Puke"
+    ]
+  },
+  {
+    "id": 55,
+    "groups": [
+      {
+        "label": "Workplaces",
+        "words": [
+          "Hale ʻoihana",
+          "Hale kūʻai",
+          "Hale leka",
+          "Hale pule"
+        ]
+      },
+      {
+        "label": "Work Roles",
+        "words": [
+          "Loea",
+          "Kauka",
+          "Kākāʻōlelo",
+          "Kālaihonua"
+        ]
+      },
+      {
+        "label": "Money Words",
+        "words": [
+          "Kālā",
+          "Lipine",
+          "Uku",
+          "Kūʻai"
+        ]
+      },
+      {
+        "label": "Office Items",
+        "words": [
+          "Lolouila",
+          "Kelepona",
+          "Pākaukau",
+          "Noho"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hale ʻoihana",
+      "Kākāʻōlelo",
+      "Kālaihonua",
+      "Kālā",
+      "Pākaukau",
+      "Kauka",
+      "Lipine",
+      "Uku",
+      "Lolouila",
+      "Kelepona",
+      "Hale kūʻai",
+      "Loea",
+      "Kūʻai",
+      "Noho",
+      "Hale pule",
+      "Hale leka"
+    ]
+  },
+  {
+    "id": 56,
+    "groups": [
+      {
+        "label": "Devices",
+        "words": [
+          "Lolouila",
+          "Kelepona",
+          "Kīwī",
+          "Lekiō"
+        ]
+      },
+      {
+        "label": "Internet",
+        "words": [
+          "Pūnaewele",
+          "Leka uila",
+          "ʻUpena",
+          "Pukana"
+        ]
+      },
+      {
+        "label": "Tech Verbs",
+        "words": [
+          "Hana",
+          "Hoʻoili",
+          "Hoʻouna",
+          "Kīkē"
+        ]
+      },
+      {
+        "label": "Tech Words",
+        "words": [
+          "Polokalamu",
+          "ʻIke maʻa",
+          "Hua kā",
+          "Kīkokiko"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Leka uila",
+      "Hua kā",
+      "ʻIke maʻa",
+      "Hoʻoili",
+      "Kīkokiko",
+      "Kīkē",
+      "Kīwī",
+      "Kelepona",
+      "Lekiō",
+      "ʻUpena",
+      "Polokalamu",
+      "Pūnaewele",
+      "Hana",
+      "Hoʻouna",
+      "Pukana",
+      "Lolouila"
+    ]
+  },
+  {
+    "id": 57,
+    "groups": [
+      {
+        "label": "Rooms",
+        "words": [
+          "Lumi moe",
+          "Lumi kūkē",
+          "Lumi ʻauʻau",
+          "Lumi hoʻokipa"
+        ]
+      },
+      {
+        "label": "House Parts",
+        "words": [
+          "Puka",
+          "Puka aniani",
+          "Paia",
+          "Kaupaku"
+        ]
+      },
+      {
+        "label": "Furniture",
+        "words": [
+          "Noho",
+          "Pākaukau",
+          "Wahi moe",
+          "Pā kīʻaha"
+        ]
+      },
+      {
+        "label": "Cleaning",
+        "words": [
+          "Holoi",
+          "Hoʻomaʻemaʻe",
+          "Hopu",
+          "Kāhili"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kāhili",
+      "Puka",
+      "Paia",
+      "Pā kīʻaha",
+      "Holoi",
+      "Wahi moe",
+      "Lumi ʻauʻau",
+      "Kaupaku",
+      "Hopu",
+      "Noho",
+      "Lumi hoʻokipa",
+      "Lumi moe",
+      "Hoʻomaʻemaʻe",
+      "Pākaukau",
+      "Puka aniani",
+      "Lumi kūkē"
+    ]
+  },
+  {
+    "id": 58,
+    "groups": [
+      {
+        "label": "Everyday Wear",
+        "words": [
+          "Pālule",
+          "Lole",
+          "Lole wāwae",
+          "Kāmaʻa"
+        ]
+      },
+      {
+        "label": "Sun Wear",
+        "words": [
+          "Pāpale",
+          "Aniani makaʻole",
+          "Kīhei",
+          "Pāʻū"
+        ]
+      },
+      {
+        "label": "Jewelry",
+        "words": [
+          "Lei",
+          "Apo lima",
+          "Apopepeiao",
+          "Apo manamana"
+        ]
+      },
+      {
+        "label": "Materials",
+        "words": [
+          "Kapa",
+          "Hulu",
+          "ʻIli",
+          "Lauhala"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kapa",
+      "Lole",
+      "Pāpale",
+      "Apo lima",
+      "Aniani makaʻole",
+      "Lei",
+      "Lole wāwae",
+      "Lauhala",
+      "Pāʻū",
+      "Hulu",
+      "Pālule",
+      "ʻIli",
+      "Apopepeiao",
+      "Apo manamana",
+      "Kāmaʻa",
+      "Kīhei"
+    ]
+  },
+  {
+    "id": 59,
+    "groups": [
+      {
+        "label": "Pets",
+        "words": [
+          "ʻĪlio",
+          "Pōpoki",
+          "Manu",
+          "Iʻa"
+        ]
+      },
+      {
+        "label": "Farm Animals",
+        "words": [
+          "Pipi",
+          "Puaʻa",
+          "Hipa",
+          "Moa"
+        ]
+      },
+      {
+        "label": "Wild Animals",
+        "words": [
+          "Pueo",
+          "ʻIo",
+          "Honu",
+          "Manō"
+        ]
+      },
+      {
+        "label": "Insects",
+        "words": [
+          "Nalo",
+          "Nalo meli",
+          "Nalo lele",
+          "Lalakū"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Nalo",
+      "Nalo lele",
+      "Nalo meli",
+      "ʻIo",
+      "Puaʻa",
+      "Iʻa",
+      "Hipa",
+      "Pueo",
+      "Manō",
+      "Pipi",
+      "Manu",
+      "ʻĪlio",
+      "Lalakū",
+      "Honu",
+      "Pōpoki",
+      "Moa"
+    ]
+  },
+  {
+    "id": 60,
+    "groups": [
+      {
+        "label": "Plant Parts",
+        "words": [
+          "Aʻa",
+          "Kumu",
+          "Lau",
+          "Pua"
+        ]
+      },
+      {
+        "label": "Garden Verbs",
+        "words": [
+          "Kanu",
+          "Wai",
+          "Hōʻulu",
+          "Hōʻiliʻili"
+        ]
+      },
+      {
+        "label": "Garden Pests",
+        "words": [
+          "Lalakū",
+          "ʻAla",
+          "Mau",
+          "ʻIlio hae"
+        ]
+      },
+      {
+        "label": "Garden Result",
+        "words": [
+          "Hua",
+          "ʻAi",
+          "Mea kanu",
+          "Māla"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hua",
+      "Lalakū",
+      "Mau",
+      "ʻIlio hae",
+      "Kumu",
+      "Hōʻulu",
+      "Aʻa",
+      "Wai",
+      "ʻAi",
+      "Hōʻiliʻili",
+      "Pua",
+      "Mea kanu",
+      "Lau",
+      "Māla",
+      "Kanu",
+      "ʻAla"
+    ]
+  },
+  {
+    "id": 61,
+    "groups": [
+      {
+        "label": "Give and Share",
+        "words": [
+          "Hāʻawi",
+          "Hāʻawi wale",
+          "Kōkua",
+          "Hoʻolauleʻa"
+        ]
+      },
+      {
+        "label": "Care",
+        "words": [
+          "Mālama",
+          "Hānai",
+          "Hoʻopalekana",
+          "Pumehana"
+        ]
+      },
+      {
+        "label": "Bring and Take",
+        "words": [
+          "Lawe",
+          "Lawe mai",
+          "Hoʻihoʻi",
+          "Hāpai"
+        ]
+      },
+      {
+        "label": "Welcome",
+        "words": [
+          "Hoʻokipa",
+          "E komo mai",
+          "Welina",
+          "Aloha"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hoʻihoʻi",
+      "Lawe mai",
+      "Hāʻawi wale",
+      "Hoʻokipa",
+      "E komo mai",
+      "Hoʻopalekana",
+      "Welina",
+      "Pumehana",
+      "Hāʻawi",
+      "Hāpai",
+      "Mālama",
+      "Hānai",
+      "Hoʻolauleʻa",
+      "Lawe",
+      "Kōkua",
+      "Aloha"
+    ]
+  },
+  {
+    "id": 62,
+    "groups": [
+      {
+        "label": "Times of Day",
+        "words": [
+          "Kakahiaka",
+          "Awakea",
+          "ʻAuinalā",
+          "Ahiahi"
+        ]
+      },
+      {
+        "label": "Day Periods",
+        "words": [
+          "Wanaʻao",
+          "Lā",
+          "Aumoe",
+          "Pō"
+        ]
+      },
+      {
+        "label": "Past and Future",
+        "words": [
+          "Inehinei",
+          "I kēia lā",
+          "ʻApōpō",
+          "Mālama mua"
+        ]
+      },
+      {
+        "label": "Long Spans",
+        "words": [
+          "Manawa",
+          "Hola",
+          "Anahulu",
+          "Makahiki"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Manawa",
+      "ʻApōpō",
+      "I kēia lā",
+      "Aumoe",
+      "Mālama mua",
+      "Kakahiaka",
+      "Anahulu",
+      "Inehinei",
+      "ʻAuinalā",
+      "Makahiki",
+      "Wanaʻao",
+      "Pō",
+      "Ahiahi",
+      "Hola",
+      "Awakea",
+      "Lā"
+    ]
+  },
+  {
+    "id": 63,
+    "groups": [
+      {
+        "label": "Money Counting",
+        "words": [
+          "Kālā",
+          "ʻEnehana",
+          "Pueka",
+          "Kālā kūʻai"
+        ]
+      },
+      {
+        "label": "Telling Time",
+        "words": [
+          "Hola",
+          "Minuke",
+          "Kekona",
+          "Manawa"
+        ]
+      },
+      {
+        "label": "Crowd Sizes",
+        "words": [
+          "Hoʻokahi",
+          "Lehulehu",
+          "ʻEulu",
+          "Iwakālua"
+        ]
+      },
+      {
+        "label": "Sequence Words",
+        "words": [
+          "Mua",
+          "Lua",
+          "Kolu",
+          "Hope"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kālā kūʻai",
+      "Mua",
+      "Hoʻokahi",
+      "Pueka",
+      "Iwakālua",
+      "Minuke",
+      "Kālā",
+      "Lehulehu",
+      "Kekona",
+      "ʻEnehana",
+      "ʻEulu",
+      "Hope",
+      "Lua",
+      "Hola",
+      "Manawa",
+      "Kolu"
+    ]
+  },
+  {
+    "id": 64,
+    "groups": [
+      {
+        "label": "Rainbow Reds-Greens",
+        "words": [
+          "ʻUlaʻula",
+          "ʻĀlani",
+          "Melemele",
+          "ʻŌmaʻomaʻo"
+        ]
+      },
+      {
+        "label": "Cool Tones",
+        "words": [
+          "Polū",
+          "Poni",
+          "Hinahina",
+          "ʻĀkala"
+        ]
+      },
+      {
+        "label": "Sun and Sand",
+        "words": [
+          "ʻĀhinahina",
+          "Lehua",
+          "Mākonā",
+          "Pālolo"
+        ]
+      },
+      {
+        "label": "Light and Dark",
+        "words": [
+          "Mālamalama",
+          "Pōuli",
+          "Keʻokeʻo",
+          "ʻEleʻele"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Melemele",
+      "Pōuli",
+      "Mālamalama",
+      "ʻĀkala",
+      "Keʻokeʻo",
+      "Pālolo",
+      "Poni",
+      "Polū",
+      "ʻŌmaʻomaʻo",
+      "ʻUlaʻula",
+      "ʻĀhinahina",
+      "Hinahina",
+      "Lehua",
+      "Mākonā",
+      "ʻĀlani",
+      "ʻEleʻele"
+    ]
+  },
+  {
+    "id": 65,
+    "groups": [
+      {
+        "label": "Wai compounds",
+        "words": [
+          "Wailele",
+          "Waiola",
+          "Waipuna",
+          "Waipahu"
+        ]
+      },
+      {
+        "label": "Wai compounds 2",
+        "words": [
+          "Wailau",
+          "Waipuilani",
+          "Waikīkī",
+          "Waiʻanae"
+        ]
+      },
+      {
+        "label": "Just water",
+        "words": [
+          "Wai",
+          "Kai",
+          "Ua",
+          "Loko"
+        ]
+      },
+      {
+        "label": "Water containers",
+        "words": [
+          "Hue wai",
+          "Pā wai",
+          "Kīʻaha",
+          "ʻUmeke wai"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Waipuilani",
+      "Waikīkī",
+      "Wailele",
+      "Waiola",
+      "Loko",
+      "Waipuna",
+      "ʻUmeke wai",
+      "Kai",
+      "Hue wai",
+      "Ua",
+      "Waiʻanae",
+      "Waipahu",
+      "Wai",
+      "Kīʻaha",
+      "Wailau",
+      "Pā wai"
+    ]
+  },
+  {
+    "id": 66,
+    "groups": [
+      {
+        "label": "Hoʻo words A",
+        "words": [
+          "Hoʻomaikaʻi",
+          "Hoʻokipa",
+          "Hoʻomākaukau",
+          "Hoʻomaha"
+        ]
+      },
+      {
+        "label": "Hoʻo words B",
+        "words": [
+          "Hoʻomanaʻo",
+          "Hoʻomaopopo",
+          "Hoʻonui",
+          "Hoʻokahi"
+        ]
+      },
+      {
+        "label": "Hoʻo words C",
+        "words": [
+          "Hoʻōla",
+          "Hoʻoili",
+          "Hoʻouna",
+          "Hoʻokumu"
+        ]
+      },
+      {
+        "label": "Hoʻo words D",
+        "words": [
+          "Hoʻomaʻemaʻe",
+          "Hoʻolauleʻa",
+          "Hoʻopaʻa",
+          "Hoʻolohe"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hoʻoili",
+      "Hoʻomaikaʻi",
+      "Hoʻolohe",
+      "Hoʻolauleʻa",
+      "Hoʻokumu",
+      "Hoʻomaʻemaʻe",
+      "Hoʻomaopopo",
+      "Hoʻokipa",
+      "Hoʻōla",
+      "Hoʻouna",
+      "Hoʻopaʻa",
+      "Hoʻokahi",
+      "Hoʻomaha",
+      "Hoʻonui",
+      "Hoʻomanaʻo",
+      "Hoʻomākaukau"
+    ]
+  },
+  {
+    "id": 67,
+    "groups": [
+      {
+        "label": "Bright/Loud",
+        "words": [
+          "Wikiwiki",
+          "Mālamalama",
+          "ʻAʻama",
+          "Kāhāhā"
+        ]
+      },
+      {
+        "label": "Soft/Gentle",
+        "words": [
+          "Hinahina",
+          "Hāʻule lau",
+          "Lawalawa",
+          "Hauʻoli"
+        ]
+      },
+      {
+        "label": "Doubled colors",
+        "words": [
+          "ʻUlaʻula",
+          "Keʻokeʻo",
+          "ʻEleʻele",
+          "Melemele"
+        ]
+      },
+      {
+        "label": "Doubled actions",
+        "words": [
+          "Lomilomi",
+          "Lumilumi",
+          "Hāhā",
+          "Walaʻau"
+        ]
+      }
+    ],
+    "boardWords": [
+      "ʻUlaʻula",
+      "Kāhāhā",
+      "Hāʻule lau",
+      "Wikiwiki",
+      "Hāhā",
+      "Walaʻau",
+      "Keʻokeʻo",
+      "Melemele",
+      "ʻEleʻele",
+      "Hinahina",
+      "Lumilumi",
+      "Hauʻoli",
+      "Lawalawa",
+      "Lomilomi",
+      "Mālamalama",
+      "ʻAʻama"
+    ]
+  },
+  {
+    "id": 68,
+    "groups": [
+      {
+        "label": "Sunny Time",
+        "words": [
+          "Kakahiaka",
+          "Awakea",
+          "ʻAuinalā",
+          "Ahiahi"
+        ]
+      },
+      {
+        "label": "Days",
+        "words": [
+          "Lā",
+          "Lāpule",
+          "Lā hānau",
+          "Lā nui"
+        ]
+      },
+      {
+        "label": "Sky Lights",
+        "words": [
+          "Mahina",
+          "Hōkū",
+          "Ānuenue",
+          "Lewa"
+        ]
+      },
+      {
+        "label": "Day Activities",
+        "words": [
+          "Aʻo",
+          "Hana",
+          "Pāʻani",
+          "Hoʻomaha"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kakahiaka",
+      "Hana",
+      "Lā",
+      "Lā nui",
+      "Lāpule",
+      "ʻAuinalā",
+      "Aʻo",
+      "Lā hānau",
+      "Ahiahi",
+      "Ānuenue",
+      "Hōkū",
+      "Awakea",
+      "Mahina",
+      "Hoʻomaha",
+      "Lewa",
+      "Pāʻani"
+    ]
+  },
+  {
+    "id": 69,
+    "groups": [
+      {
+        "label": "Night Hours",
+        "words": [
+          "Pō",
+          "Aumoe",
+          "Pōuli",
+          "Wanaʻao"
+        ]
+      },
+      {
+        "label": "Night Sky",
+        "words": [
+          "Mahina",
+          "Hōkū",
+          "Ānuenue",
+          "Lewa"
+        ]
+      },
+      {
+        "label": "Sleep Words",
+        "words": [
+          "Moe",
+          "Hiamoe",
+          "Moeʻuhane",
+          "Ala"
+        ]
+      },
+      {
+        "label": "Bedroom",
+        "words": [
+          "Wahi moe",
+          "Lumi moe",
+          "Uluna",
+          "Kapamoe"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Pō",
+      "Ala",
+      "Lumi moe",
+      "Moe",
+      "Mahina",
+      "Lewa",
+      "Wanaʻao",
+      "Ānuenue",
+      "Moeʻuhane",
+      "Hōkū",
+      "Hiamoe",
+      "Uluna",
+      "Pōuli",
+      "Wahi moe",
+      "Kapamoe",
+      "Aumoe"
+    ]
+  },
+  {
+    "id": 70,
+    "groups": [
+      {
+        "label": "Polite Words",
+        "words": [
+          "E ʻoluʻolu",
+          "Mahalo",
+          "ʻAe",
+          "Kala mai"
+        ]
+      },
+      {
+        "label": "Welcome",
+        "words": [
+          "Aloha",
+          "E komo mai",
+          "Welina",
+          "Hoʻokipa"
+        ]
+      },
+      {
+        "label": "Farewells",
+        "words": [
+          "A hui hou",
+          "Aloha ʻoe",
+          "Mālama pono",
+          "E ola"
+        ]
+      },
+      {
+        "label": "Helpful Phrases",
+        "words": [
+          "Pehea ʻoe",
+          "Maikaʻi",
+          "ʻAʻole pilikia",
+          "Mahalo nui"
+        ]
+      }
+    ],
+    "boardWords": [
+      "E ʻoluʻolu",
+      "Mahalo nui",
+      "Maikaʻi",
+      "A hui hou",
+      "ʻAʻole pilikia",
+      "Aloha ʻoe",
+      "Welina",
+      "Mālama pono",
+      "Mahalo",
+      "E komo mai",
+      "ʻAe",
+      "Pehea ʻoe",
+      "Hoʻokipa",
+      "E ola",
+      "Aloha",
+      "Kala mai"
+    ]
+  },
+  {
+    "id": 71,
+    "groups": [
+      {
+        "label": "Music Roles",
+        "words": [
+          "Mea hīmeni",
+          "Hoʻopaʻa",
+          "Hoʻokani",
+          "Kumu hula"
+        ]
+      },
+      {
+        "label": "Mele Types",
+        "words": [
+          "Mele aloha",
+          "Mele inoa",
+          "Mele koʻihonua",
+          "Mele oli"
+        ]
+      },
+      {
+        "label": "Strings and Skin",
+        "words": [
+          "ʻUkulele",
+          "Kīkā",
+          "Pahu",
+          "Pūniu"
+        ]
+      },
+      {
+        "label": "Voice",
+        "words": [
+          "Leo",
+          "Hīmeni",
+          "Mele",
+          "Oli"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Mele inoa",
+      "Mele",
+      "Hīmeni",
+      "Mele koʻihonua",
+      "Mele oli",
+      "Hoʻopaʻa",
+      "Pūniu",
+      "Oli",
+      "Kumu hula",
+      "Hoʻokani",
+      "Mele aloha",
+      "Mea hīmeni",
+      "Leo",
+      "Kīkā",
+      "ʻUkulele",
+      "Pahu"
+    ]
+  },
+  {
+    "id": 72,
+    "groups": [
+      {
+        "label": "Story Forms",
+        "words": [
+          "Moʻolelo",
+          "ʻŌlelo noʻeau",
+          "Mele",
+          "Oli"
+        ]
+      },
+      {
+        "label": "Story People",
+        "words": [
+          "Kāhuna",
+          "Kupuna",
+          "Haʻi moʻolelo",
+          "Mea kākau"
+        ]
+      },
+      {
+        "label": "Story Verbs",
+        "words": [
+          "Haʻi",
+          "Wehewehe",
+          "Hoʻomanaʻo",
+          "Hoʻāʻo"
+        ]
+      },
+      {
+        "label": "Story Settings",
+        "words": [
+          "Kahiko",
+          "Pō",
+          "Wao",
+          "Kuahiwi"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Moʻolelo",
+      "Oli",
+      "Wao",
+      "ʻŌlelo noʻeau",
+      "Mea kākau",
+      "Haʻi moʻolelo",
+      "Pō",
+      "Kāhuna",
+      "Hoʻomanaʻo",
+      "Haʻi",
+      "Kupuna",
+      "Kuahiwi",
+      "Hoʻāʻo",
+      "Wehewehe",
+      "Kahiko",
+      "Mele"
+    ]
+  },
+  {
+    "id": 73,
+    "groups": [
+      {
+        "label": "Core Values",
+        "words": [
+          "Aloha",
+          "Mālama",
+          "Lokomaikaʻi",
+          "Pono"
+        ]
+      },
+      {
+        "label": "Spirit Words",
+        "words": [
+          "Mana",
+          "ʻUhane",
+          "Akua",
+          "Kapu"
+        ]
+      },
+      {
+        "label": "Right Action",
+        "words": [
+          "Kuleana",
+          "Hoʻomau",
+          "Kūʻokoʻa",
+          "Pololei"
+        ]
+      },
+      {
+        "label": "Connection",
+        "words": [
+          "Pilina",
+          "Pili",
+          "Hui",
+          "Lōkahi"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kūʻokoʻa",
+      "Aloha",
+      "ʻUhane",
+      "Pololei",
+      "Pili",
+      "Akua",
+      "Pono",
+      "Hui",
+      "Mana",
+      "Pilina",
+      "Lokomaikaʻi",
+      "Hoʻomau",
+      "Kapu",
+      "Lōkahi",
+      "Mālama",
+      "Kuleana"
+    ]
+  },
+  {
+    "id": 74,
+    "groups": [
+      {
+        "label": "Land Divisions",
+        "words": [
+          "Mokupuni",
+          "Moku",
+          "Ahupuaʻa",
+          "ʻIli"
+        ]
+      },
+      {
+        "label": "Land Use",
+        "words": [
+          "Loʻi",
+          "Māla",
+          "Loko iʻa",
+          "Lo ʻai"
+        ]
+      },
+      {
+        "label": "Wild Lands",
+        "words": [
+          "Wao",
+          "Wao kele",
+          "Wao akua",
+          "Wao kanaka"
+        ]
+      },
+      {
+        "label": "Land Boundaries",
+        "words": [
+          "Pali",
+          "Awāwa",
+          "Kahawai",
+          "Kuamoʻo"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Wao",
+      "Mokupuni",
+      "Lo ʻai",
+      "Wao akua",
+      "Wao kanaka",
+      "Loko iʻa",
+      "Wao kele",
+      "Awāwa",
+      "Kahawai",
+      "Kuamoʻo",
+      "Ahupuaʻa",
+      "Loʻi",
+      "Pali",
+      "Moku",
+      "Māla",
+      "ʻIli"
+    ]
+  },
+  {
+    "id": 75,
+    "groups": [
+      {
+        "label": "Ocean Words",
+        "words": [
+          "Moana",
+          "Kai",
+          "Nalu",
+          "Honua kai"
+        ]
+      },
+      {
+        "label": "Shore",
+        "words": [
+          "Kahakai",
+          "Kahaone",
+          "One",
+          "Pōhaku"
+        ]
+      },
+      {
+        "label": "Beach Activities",
+        "words": [
+          "ʻAuʻau",
+          "Heʻe nalu",
+          "Lawaiʻa",
+          "Hoʻolulu"
+        ]
+      },
+      {
+        "label": "Tides",
+        "words": [
+          "Kai piha",
+          "Kai emi",
+          "Kai malie",
+          "Kai kō"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Kahakai",
+      "Honua kai",
+      "Kai kō",
+      "Kai emi",
+      "Hoʻolulu",
+      "Nalu",
+      "Lawaiʻa",
+      "Kai",
+      "Kahaone",
+      "Kai piha",
+      "ʻAuʻau",
+      "Moana",
+      "Pōhaku",
+      "One",
+      "Heʻe nalu",
+      "Kai malie"
+    ]
+  },
+  {
+    "id": 76,
+    "groups": [
+      {
+        "label": "ʻAi compounds",
+        "words": [
+          "ʻAi noa",
+          "ʻAi kapu",
+          "ʻAi pono",
+          "ʻAi nui"
+        ]
+      },
+      {
+        "label": "Hawaiian dishes",
+        "words": [
+          "Poi",
+          "Laulau",
+          "Kalua",
+          "Haupia"
+        ]
+      },
+      {
+        "label": "Eating verbs",
+        "words": [
+          "ʻAi",
+          "Inu",
+          "Hānai",
+          "Māʻona"
+        ]
+      },
+      {
+        "label": "At the table",
+        "words": [
+          "Pā",
+          "Kīʻaha",
+          "ʻUmeke",
+          "Pahi"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Inu",
+      "ʻUmeke",
+      "Hānai",
+      "ʻAi kapu",
+      "Laulau",
+      "ʻAi",
+      "ʻAi pono",
+      "Pahi",
+      "Pā",
+      "Kīʻaha",
+      "ʻAi noa",
+      "Poi",
+      "ʻAi nui",
+      "Kalua",
+      "Haupia",
+      "Māʻona"
+    ]
+  },
+  {
+    "id": 77,
+    "groups": [
+      {
+        "label": "Manu compounds",
+        "words": [
+          "Manu o ke kai",
+          "Manu o ka uka",
+          "Manu nui",
+          "Manu liʻiliʻi"
+        ]
+      },
+      {
+        "label": "Birds at sea",
+        "words": [
+          "ʻIwa",
+          "Noio",
+          "Koaʻe",
+          "ʻAʻo"
+        ]
+      },
+      {
+        "label": "Birds on land",
+        "words": [
+          "ʻIo",
+          "Pueo",
+          "ʻElepaio",
+          "ʻApapane"
+        ]
+      },
+      {
+        "label": "Bird Parts",
+        "words": [
+          "Hulu",
+          "ʻĒheu",
+          "ʻOhe",
+          "Niho manu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Manu nui",
+      "Niho manu",
+      "Koaʻe",
+      "Manu o ke kai",
+      "ʻOhe",
+      "Pueo",
+      "ʻElepaio",
+      "ʻApapane",
+      "ʻAʻo",
+      "ʻIwa",
+      "Manu o ka uka",
+      "Hulu",
+      "ʻĒheu",
+      "Manu liʻiliʻi",
+      "Noio",
+      "ʻIo"
+    ]
+  },
+  {
+    "id": 78,
+    "groups": [
+      {
+        "label": "Hale compounds",
+        "words": [
+          "Hale moe",
+          "Hale kūʻai",
+          "Hale leka",
+          "Hale ʻaina"
+        ]
+      },
+      {
+        "label": "Hale compounds 2",
+        "words": [
+          "Hale pule",
+          "Hale wai",
+          "Hale hālāwai",
+          "Hale kuke"
+        ]
+      },
+      {
+        "label": "House Pieces",
+        "words": [
+          "Puka",
+          "Puka aniani",
+          "Paia",
+          "Kaupaku"
+        ]
+      },
+      {
+        "label": "House Things",
+        "words": [
+          "Noho",
+          "Pākaukau",
+          "Wahi moe",
+          "Ipukukui"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Hale kuke",
+      "Puka",
+      "Noho",
+      "Puka aniani",
+      "Wahi moe",
+      "Hale ʻaina",
+      "Hale wai",
+      "Hale leka",
+      "Hale moe",
+      "Ipukukui",
+      "Pākaukau",
+      "Kaupaku",
+      "Paia",
+      "Hale pule",
+      "Hale kūʻai",
+      "Hale hālāwai"
+    ]
+  },
+  {
+    "id": 79,
+    "groups": [
+      {
+        "label": "Kai conditions",
+        "words": [
+          "Kai malie",
+          "Kai uli",
+          "Kai piha",
+          "Kai emi"
+        ]
+      },
+      {
+        "label": "Kai compounds",
+        "words": [
+          "Kai oki",
+          "Kaiākea",
+          "Kaiapuni",
+          "Kūʻono"
+        ]
+      },
+      {
+        "label": "Kai life",
+        "words": [
+          "Iʻa",
+          "Honu",
+          "Manō",
+          "Heʻe"
+        ]
+      },
+      {
+        "label": "Ocean tools",
+        "words": [
+          "ʻUpena",
+          "Pā",
+          "Hoe",
+          "Pe ʻa"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Pā",
+      "ʻUpena",
+      "Pe ʻa",
+      "Kai uli",
+      "Kaiapuni",
+      "Iʻa",
+      "Kai malie",
+      "Heʻe",
+      "Hoe",
+      "Manō",
+      "Kai emi",
+      "Kai piha",
+      "Honu",
+      "Kaiākea",
+      "Kūʻono",
+      "Kai oki"
+    ]
+  },
+  {
+    "id": 80,
+    "groups": [
+      {
+        "label": "Daily Things",
+        "words": [
+          "Aʻahu",
+          "Inu wai",
+          "ʻAi",
+          "Hiamoe"
+        ]
+      },
+      {
+        "label": "Workday",
+        "words": [
+          "Hana",
+          "Hālāwai",
+          "Aʻo",
+          "Hoʻomaha"
+        ]
+      },
+      {
+        "label": "Free Time",
+        "words": [
+          "Pāʻani",
+          "Mele",
+          "Heluhelu",
+          "Walaʻau"
+        ]
+      },
+      {
+        "label": "Closing Words",
+        "words": [
+          "Aloha",
+          "Mahalo",
+          "Pono",
+          "Mālama"
+        ]
+      }
+    ],
+    "boardWords": [
+      "Inu wai",
+      "Hoʻomaha",
+      "Mele",
+      "Hiamoe",
+      "Hana",
+      "Aʻahu",
+      "ʻAi",
+      "Aloha",
+      "Mahalo",
+      "Heluhelu",
+      "Hālāwai",
+      "Pono",
+      "Walaʻau",
+      "Mālama",
+      "Aʻo",
+      "Pāʻani"
+    ]
   }
 ]
