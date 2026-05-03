@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+  <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15171c" media="(prefers-color-scheme: dark)">
+  <title>Rootz</title>
+  <meta name="description" content="A daily Hawaiian word sorting game. Find 4 groups of 4 words.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Rootz">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function(){
+      try{
+        var t = localStorage.getItem('rootz_theme');
+        if(!t){
+          t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        if(t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      }catch(e){}
+    })();
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Rootz home">
+        <span class="logo" aria-hidden="true">R</span>
+        <span class="brandText">
+          <span class="title">Rootz</span>
+          <span class="subtitle" id="subtitle">Daily puzzle</span>
+        </span>
+      </a>
+
+      <div class="topActions">
+        <button class="iconBtn" id="themeBtn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span aria-hidden="true">◐</span>
+        </button>
+        <button class="iconBtn" id="howBtn" type="button" aria-label="How to play" title="How to play">
+          <span aria-hidden="true">?</span>
+        </button>
+        <button class="iconBtn" id="statsBtn" type="button" aria-label="Stats" title="Stats">
+          <span aria-hidden="true">★</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="solvedCard introCard" aria-label="Instructions">
+        <div class="solvedLabel">How to play</div>
+        <p class="introText">Select 4 words that belong together, then press Submit. Find all 4 groups to win, with up to 4 mistakes. Use Shuffle if you get stuck. To play any of the 30 day puzzles, select Play other Day Puzzles at the bottom.</p>
+      </section>
+
+      <section class="statusRow" aria-live="polite">
+        <div class="statusPill" id="puzzleMeta">Loading…</div>
+        <div class="statusPill" id="mistakesPill">Mistakes: <span id="mistakesLeft">4</span></div>
+      </section>
+
+      <section class="solved" id="solvedGroups" aria-label="Solved groups"></section>
+
+      <section class="boardWrap">
+        <div class="board" id="board" role="grid" aria-label="Word board"></div>
+      </section>
+
+      <section class="controls">
+        <button class="btn ghost" id="shuffleBtn" type="button">Shuffle</button>
+        <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+        <button class="btn primary" id="submitBtn" type="button" disabled>Submit</button>
+      </section>
+
+      <section class="footerRow">
+        <button class="linkBtn" id="archiveBtn" type="button">Play other Day Puzzles</button>
+        <button class="linkBtn" id="practiceBtn" type="button">Practice mode</button>
+      </section>
+
+      <p class="creditLine">Created by Olin Kealoha Lagon</p>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </div>
+
+  <dialog class="modal" id="howModal" aria-labelledby="howTitle">
+    <div class="modalInner">
+      <div class="modalTop">
+        <h2 id="howTitle">How to play</h2>
+        <button class="iconBtn" data-close="howModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <p>Select 4 words that belong together, then press Submit.</p>
+        <p>Find 4 groups of 4. You have 4 mistakes.</p>
+        <p>Tip: Use Shuffle if the board feels stuck.</p>
+        <p>To play any of the 30 day puzzles, select Play other Day Puzzles.</p>
+      </div>
+      <div class="modalBottom">
+        <button class="btn primary" data-close="howModal" type="button">Got it</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="statsModal" aria-labelledby="statsTitle">
+    <div class="modalInner">
+      <div class="modalTop">
+        <h2 id="statsTitle">Stats</h2>
+        <button class="iconBtn" data-close="statsModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="statsGrid">
+          <div class="statCard">
+            <div class="statNum" id="statPlayed">0</div>
+            <div class="statLbl">Played</div>
+          </div>
+          <div class="statCard">
+            <div class="statNum" id="statWinPct">0%</div>
+            <div class="statLbl">Win %</div>
+          </div>
+          <div class="statCard">
+            <div class="statNum" id="statStreak">0</div>
+            <div class="statLbl">Streak</div>
+          </div>
+          <div class="statCard">
+            <div class="statNum" id="statBest">0</div>
+            <div class="statLbl">Best streak</div>
+          </div>
+        </div>
+      </div>
+      <div class="modalBottom">
+        <button class="btn ghost" id="resetStatsBtn" type="button">Reset stats</button>
+        <button class="btn primary" data-close="statsModal" type="button">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="endModal" aria-labelledby="endTitle">
+    <div class="modalInner">
+      <div class="modalTop">
+        <h2 id="endTitle">Result</h2>
+        <button class="iconBtn" data-close="endModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="resultLine" id="endSummary"></div>
+        <div class="resultGrid" id="resultGrid" aria-label="Result grid"></div>
+      </div>
+      <div class="modalBottom">
+        <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+        <button class="btn primary" data-close="endModal" type="button">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="archiveModal" aria-labelledby="archiveTitle">
+    <div class="modalInner">
+      <div class="modalTop">
+        <h2 id="archiveTitle">Play other Day Puzzles</h2>
+        <button class="iconBtn" data-close="archiveModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="archiveRow">
+          <label class="archiveLabel" for="archiveSelect">Puzzle</label>
+          <select id="archiveSelect" class="select"></select>
+          <button class="btn primary" id="openArchiveSelectedBtn" type="button">Play</button>
+        </div>
+        <p class="hint">Playing other days does not affect your daily streak.</p>
+      </div>
+      <div class="modalBottom">
+        <button class="btn primary" data-close="archiveModal" type="button">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <span class="footer-line">Built with aloha by <a href="https://www.linkedin.com/in/olinlagon/" target="_blank" rel="noopener">Olin Kealoha Lagon</a></span>
+    <span class="footer-line"><a href="https://github.com/olagon/rootz" target="_blank" rel="noopener">Open source</a> &middot; <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a> &middot; No ads</span>
+    <span class="footer-line"><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="https://www.linkedin.com/in/olinlagon/" target="_blank" rel="noopener">Send feedback</a></span>
+    <span class="footer-line footer-version">© 2026 &middot; v1.0</span>
+  </footer>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('themeBtn');
+      if(!btn) return;
+      btn.addEventListener('click', function(){
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if(isDark){
+          document.documentElement.removeAttribute('data-theme');
+          try{ localStorage.setItem('rootz_theme', 'light'); }catch(e){}
+        }else{
+          document.documentElement.setAttribute('data-theme', 'dark');
+          try{ localStorage.setItem('rootz_theme', 'dark'); }catch(e){}
+        }
+      });
+    })();
+  </script>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

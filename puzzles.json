@@ -1,0 +1,1772 @@
+[
+  {
+    "id": 1,
+    "groups": [
+      {
+        "label": "Numbers 1-4",
+        "words": [
+          "ʻekahi",
+          "ʻelua",
+          "ʻekolu",
+          "ʻehā"
+        ]
+      },
+      {
+        "label": "Days Mon-Thu",
+        "words": [
+          "Poʻakahi",
+          "Poʻalua",
+          "Poʻakolu",
+          "Poʻahā"
+        ]
+      },
+      {
+        "label": "Colors",
+        "words": [
+          "ʻulaʻula",
+          "keʻokeʻo",
+          "ʻeleʻele",
+          "melemele"
+        ]
+      },
+      {
+        "label": "Basics",
+        "words": [
+          "aloha",
+          "mahalo",
+          "ʻae",
+          "ʻaʻole"
+        ]
+      }
+    ],
+    "boardWords": [
+      "ʻekolu",
+      "ʻehā",
+      "ʻaʻole",
+      "Poʻakolu",
+      "ʻeleʻele",
+      "ʻekahi",
+      "ʻelua",
+      "keʻokeʻo",
+      "melemele",
+      "ʻulaʻula",
+      "Poʻahā",
+      "Poʻalua",
+      "ʻae",
+      "Poʻakahi",
+      "mahalo",
+      "aloha"
+    ]
+  },
+  {
+    "id": 2,
+    "groups": [
+      {
+        "label": "ʻOhana roles",
+        "words": [
+          "makuahine",
+          "makuakāne",
+          "keiki",
+          "kupuna"
+        ]
+      },
+      {
+        "label": "Body parts",
+        "words": [
+          "lima",
+          "wāwae",
+          "maka",
+          "pepeiao"
+        ]
+      },
+      {
+        "label": "Foods",
+        "words": [
+          "kalo",
+          "poi",
+          "iʻa",
+          "ʻulu"
+        ]
+      },
+      {
+        "label": "Places",
+        "words": [
+          "hale",
+          "kula",
+          "māla",
+          "alanui"
+        ]
+      }
+    ],
+    "boardWords": [
+      "makuakāne",
+      "kula",
+      "maka",
+      "makuahine",
+      "keiki",
+      "māla",
+      "hale",
+      "poi",
+      "iʻa",
+      "pepeiao",
+      "kupuna",
+      "lima",
+      "wāwae",
+      "kalo",
+      "alanui",
+      "ʻulu"
+    ]
+  },
+  {
+    "id": 3,
+    "groups": [
+      {
+        "label": "Sky",
+        "words": [
+          "lā",
+          "mahina",
+          "hōkū",
+          "lani"
+        ]
+      },
+      {
+        "label": "Weather",
+        "words": [
+          "ua",
+          "makani",
+          "noe",
+          "ānuenue"
+        ]
+      },
+      {
+        "label": "Ocean",
+        "words": [
+          "kai",
+          "nalu",
+          "kahakai",
+          "one"
+        ]
+      },
+      {
+        "label": "Plants",
+        "words": [
+          "lāʻau",
+          "pua",
+          "lau",
+          "aʻa"
+        ]
+      }
+    ],
+    "boardWords": [
+      "lau",
+      "nalu",
+      "makani",
+      "lani",
+      "mahina",
+      "pua",
+      "lā",
+      "kahakai",
+      "hōkū",
+      "ānuenue",
+      "lāʻau",
+      "kai",
+      "aʻa",
+      "noe",
+      "one",
+      "ua"
+    ]
+  },
+  {
+    "id": 4,
+    "groups": [
+      {
+        "label": "Times of day",
+        "words": [
+          "kakahiaka",
+          "awakea",
+          "ahiahi",
+          "pō"
+        ]
+      },
+      {
+        "label": "Directions",
+        "words": [
+          "ʻākau",
+          "hema",
+          "hikina",
+          "komohana"
+        ]
+      },
+      {
+        "label": "Numbers 5-8",
+        "words": [
+          "ʻelima",
+          "ʻeono",
+          "ʻehiku",
+          "ʻewalu"
+        ]
+      },
+      {
+        "label": "Simple verbs",
+        "words": [
+          "hele",
+          "noho",
+          "ʻai",
+          "inu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "inu",
+      "kakahiaka",
+      "ʻewalu",
+      "awakea",
+      "pō",
+      "komohana",
+      "ʻeono",
+      "ʻai",
+      "ahiahi",
+      "hikina",
+      "hele",
+      "ʻelima",
+      "noho",
+      "hema",
+      "ʻākau",
+      "ʻehiku"
+    ]
+  },
+  {
+    "id": 5,
+    "groups": [
+      {
+        "label": "School",
+        "words": [
+          "kumu",
+          "haumāna",
+          "puke",
+          "peni"
+        ]
+      },
+      {
+        "label": "Feelings",
+        "words": [
+          "hauʻoli",
+          "kaumaha",
+          "huhū",
+          "makaʻu"
+        ]
+      },
+      {
+        "label": "Home rooms",
+        "words": [
+          "kīhini",
+          "lua",
+          "lumi",
+          "keʻena"
+        ]
+      },
+      {
+        "label": "Common things",
+        "words": [
+          "puka",
+          "pā",
+          "pākaukau",
+          "kīʻaha"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kīʻaha",
+      "pā",
+      "peni",
+      "haumāna",
+      "pākaukau",
+      "hauʻoli",
+      "kumu",
+      "huhū",
+      "puka",
+      "keʻena",
+      "lumi",
+      "makaʻu",
+      "lua",
+      "kīhini",
+      "kaumaha",
+      "puke"
+    ]
+  },
+  {
+    "id": 6,
+    "groups": [
+      {
+        "label": "Fruits",
+        "words": [
+          "maiʻa",
+          "niu",
+          "mangō",
+          "ʻalani"
+        ]
+      },
+      {
+        "label": "Sea animals",
+        "words": [
+          "honu",
+          "manō",
+          "heʻe",
+          "iʻa"
+        ]
+      },
+      {
+        "label": "Weather",
+        "words": [
+          "ua",
+          "makani",
+          "lā",
+          "ʻino"
+        ]
+      },
+      {
+        "label": "Landforms",
+        "words": [
+          "mauna",
+          "puʻu",
+          "awāwa",
+          "pali"
+        ]
+      }
+    ],
+    "boardWords": [
+      "puʻu",
+      "ʻino",
+      "mangō",
+      "manō",
+      "niu",
+      "honu",
+      "ua",
+      "lā",
+      "iʻa",
+      "heʻe",
+      "ʻalani",
+      "awāwa",
+      "maiʻa",
+      "pali",
+      "mauna",
+      "makani"
+    ]
+  },
+  {
+    "id": 7,
+    "groups": [
+      {
+        "label": "Animals",
+        "words": [
+          "ʻīlio",
+          "pōpoki",
+          "puaʻa",
+          "moa"
+        ]
+      },
+      {
+        "label": "Transport",
+        "words": [
+          "kaʻa",
+          "waʻa",
+          "mokulele",
+          "kaʻaahi"
+        ]
+      },
+      {
+        "label": "Colors",
+        "words": [
+          "uliuli",
+          "ʻōmaʻomaʻo",
+          "ʻalani",
+          "melemele"
+        ]
+      },
+      {
+        "label": "Numbers 9-12",
+        "words": [
+          "ʻeiwa",
+          "ʻumi",
+          "ʻumikūmākahi",
+          "ʻumikūmālua"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kaʻaahi",
+      "ʻumikūmākahi",
+      "ʻumi",
+      "pōpoki",
+      "ʻōmaʻomaʻo",
+      "waʻa",
+      "melemele",
+      "mokulele",
+      "kaʻa",
+      "ʻeiwa",
+      "puaʻa",
+      "ʻalani",
+      "ʻīlio",
+      "uliuli",
+      "moa",
+      "ʻumikūmālua"
+    ]
+  },
+  {
+    "id": 8,
+    "groups": [
+      {
+        "label": "Clothing",
+        "words": [
+          "lole",
+          "pālule",
+          "pāpale",
+          "kāmaʻa"
+        ]
+      },
+      {
+        "label": "Actions",
+        "words": [
+          "hana",
+          "pāʻani",
+          "aʻo",
+          "hiamoe"
+        ]
+      },
+      {
+        "label": "Sea and shore",
+        "words": [
+          "kai",
+          "nalu",
+          "kahakai",
+          "pōhaku"
+        ]
+      },
+      {
+        "label": "Values",
+        "words": [
+          "pono",
+          "kuleana",
+          "mālama",
+          "laulima"
+        ]
+      }
+    ],
+    "boardWords": [
+      "pāʻani",
+      "kāmaʻa",
+      "hana",
+      "lole",
+      "kai",
+      "pōhaku",
+      "kahakai",
+      "mālama",
+      "aʻo",
+      "pāpale",
+      "pono",
+      "hiamoe",
+      "pālule",
+      "nalu",
+      "laulima",
+      "kuleana"
+    ]
+  },
+  {
+    "id": 9,
+    "groups": [
+      {
+        "label": "Birds",
+        "words": [
+          "nēnē",
+          "pueo",
+          "ʻio",
+          "kolea"
+        ]
+      },
+      {
+        "label": "Trees",
+        "words": [
+          "niu",
+          "kukui",
+          "koa",
+          "hala"
+        ]
+      },
+      {
+        "label": "Foods",
+        "words": [
+          "laiki",
+          "hua",
+          "waiū",
+          "palaoa"
+        ]
+      },
+      {
+        "label": "Question words",
+        "words": [
+          "aha",
+          "ʻowai",
+          "ʻauhea",
+          "ʻehia"
+        ]
+      }
+    ],
+    "boardWords": [
+      "ʻio",
+      "laiki",
+      "aha",
+      "ʻauhea",
+      "ʻehia",
+      "waiū",
+      "ʻowai",
+      "niu",
+      "kolea",
+      "pueo",
+      "nēnē",
+      "hua",
+      "palaoa",
+      "koa",
+      "hala",
+      "kukui"
+    ]
+  },
+  {
+    "id": 10,
+    "groups": [
+      {
+        "label": "Days Thu-Sun",
+        "words": [
+          "Poʻahā",
+          "Poʻalima",
+          "Poʻaono",
+          "Lāpule"
+        ]
+      },
+      {
+        "label": "Months Jan-Apr",
+        "words": [
+          "Ianuali",
+          "Pepeluali",
+          "Malaki",
+          "ʻApelila"
+        ]
+      },
+      {
+        "label": "Ocean terms",
+        "words": [
+          "kai",
+          "au",
+          "nalu",
+          "ʻale"
+        ]
+      },
+      {
+        "label": "House parts",
+        "words": [
+          "puka",
+          "pukaaniani",
+          "paia",
+          "kaupaku"
+        ]
+      }
+    ],
+    "boardWords": [
+      "paia",
+      "Malaki",
+      "Poʻalima",
+      "Poʻaono",
+      "puka",
+      "Poʻahā",
+      "kai",
+      "Ianuali",
+      "Lāpule",
+      "ʻale",
+      "Pepeluali",
+      "kaupaku",
+      "nalu",
+      "ʻApelila",
+      "pukaaniani",
+      "au"
+    ]
+  },
+  {
+    "id": 11,
+    "groups": [
+      {
+        "label": "Canoe parts",
+        "words": [
+          "waʻa",
+          "hoe",
+          "ama",
+          "ʻiako"
+        ]
+      },
+      {
+        "label": "Fishing gear",
+        "words": [
+          "ʻupena",
+          "mākau",
+          "maunu",
+          "kaula"
+        ]
+      },
+      {
+        "label": "Ocean animals",
+        "words": [
+          "honu",
+          "manō",
+          "heʻe",
+          "pāpaʻi"
+        ]
+      },
+      {
+        "label": "Shore things",
+        "words": [
+          "kahakai",
+          "one",
+          "pōhaku",
+          "pūpū"
+        ]
+      }
+    ],
+    "boardWords": [
+      "pūpū",
+      "maunu",
+      "pōhaku",
+      "mākau",
+      "one",
+      "honu",
+      "hoe",
+      "pāpaʻi",
+      "kaula",
+      "ʻupena",
+      "manō",
+      "kahakai",
+      "ʻiako",
+      "ama",
+      "heʻe",
+      "waʻa"
+    ]
+  },
+  {
+    "id": 12,
+    "groups": [
+      {
+        "label": "School roles",
+        "words": [
+          "kumu",
+          "haumāna",
+          "lunakula",
+          "kōkua"
+        ]
+      },
+      {
+        "label": "Learning actions",
+        "words": [
+          "heluhelu",
+          "kākau",
+          "nīnau",
+          "hoʻomaopopo"
+        ]
+      },
+      {
+        "label": "Class items",
+        "words": [
+          "puke",
+          "peni",
+          "papa",
+          "ʻeke"
+        ]
+      },
+      {
+        "label": "Subjects",
+        "words": [
+          "pāngarau",
+          "ʻepekema",
+          "mele",
+          "moʻomeheu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "peni",
+      "kākau",
+      "kumu",
+      "ʻeke",
+      "pāngarau",
+      "lunakula",
+      "hoʻomaopopo",
+      "heluhelu",
+      "papa",
+      "moʻomeheu",
+      "nīnau",
+      "haumāna",
+      "ʻepekema",
+      "mele",
+      "puke",
+      "kōkua"
+    ]
+  },
+  {
+    "id": 13,
+    "groups": [
+      {
+        "label": "Weather events",
+        "words": [
+          "ua",
+          "makani",
+          "hekili",
+          "āwhā"
+        ]
+      },
+      {
+        "label": "Weather feel",
+        "words": [
+          "wela",
+          "anu",
+          "pulu",
+          "maloʻo"
+        ]
+      },
+      {
+        "label": "Sky words",
+        "words": [
+          "lani",
+          "hōkū",
+          "ānuenue",
+          "ao"
+        ]
+      },
+      {
+        "label": "Time units",
+        "words": [
+          "lā",
+          "pule",
+          "mahina",
+          "makahiki"
+        ]
+      }
+    ],
+    "boardWords": [
+      "maloʻo",
+      "lani",
+      "hekili",
+      "pulu",
+      "āwhā",
+      "anu",
+      "makahiki",
+      "lā",
+      "ānuenue",
+      "ao",
+      "ua",
+      "wela",
+      "makani",
+      "mahina",
+      "hōkū",
+      "pule"
+    ]
+  },
+  {
+    "id": 14,
+    "groups": [
+      {
+        "label": "Food dishes",
+        "words": [
+          "laulau",
+          "lūʻau",
+          "kālua",
+          "pōkē"
+        ]
+      },
+      {
+        "label": "Seasonings",
+        "words": [
+          "paʻakai",
+          "kō",
+          "ʻaila",
+          "ʻakaʻakai"
+        ]
+      },
+      {
+        "label": "Utensils",
+        "words": [
+          "pahi",
+          "puna",
+          "ipu",
+          "kīʻaha"
+        ]
+      },
+      {
+        "label": "Cooking verbs",
+        "words": [
+          "palai",
+          "paila",
+          "kuke",
+          "hoʻomoʻa"
+        ]
+      }
+    ],
+    "boardWords": [
+      "puna",
+      "ipu",
+      "pōkē",
+      "pahi",
+      "paila",
+      "laulau",
+      "hoʻomoʻa",
+      "paʻakai",
+      "ʻaila",
+      "lūʻau",
+      "kālua",
+      "kō",
+      "kīʻaha",
+      "kuke",
+      "ʻakaʻakai",
+      "palai"
+    ]
+  },
+  {
+    "id": 15,
+    "groups": [
+      {
+        "label": "Family terms",
+        "words": [
+          "makuahine",
+          "makuakāne",
+          "kaikuaʻana",
+          "kaikaina"
+        ]
+      },
+      {
+        "label": "Communication",
+        "words": [
+          "leka",
+          "kelepona",
+          "kamepiula",
+          "pūnaewele"
+        ]
+      },
+      {
+        "label": "Work roles",
+        "words": [
+          "alakaʻi",
+          "limahana",
+          "kahu",
+          "mahiʻai"
+        ]
+      },
+      {
+        "label": "Mind words",
+        "words": [
+          "manaʻo",
+          "moeʻuhane",
+          "hoʻomanaʻo",
+          "ʻike"
+        ]
+      }
+    ],
+    "boardWords": [
+      "alakaʻi",
+      "kahu",
+      "moeʻuhane",
+      "hoʻomanaʻo",
+      "ʻike",
+      "makuahine",
+      "makuakāne",
+      "pūnaewele",
+      "kaikuaʻana",
+      "leka",
+      "kelepona",
+      "limahana",
+      "mahiʻai",
+      "kaikaina",
+      "manaʻo",
+      "kamepiula"
+    ]
+  },
+  {
+    "id": 16,
+    "groups": [
+      {
+        "label": "Fish",
+        "words": [
+          "ahi",
+          "ʻaku",
+          "ʻulua",
+          "manini"
+        ]
+      },
+      {
+        "label": "Crops",
+        "words": [
+          "kalo",
+          "ʻuala",
+          "ʻulu",
+          "kō"
+        ]
+      },
+      {
+        "label": "Cooking methods",
+        "words": [
+          "kālua",
+          "palai",
+          "paila",
+          "hoʻomoʻa"
+        ]
+      },
+      {
+        "label": "Ocean terms",
+        "words": [
+          "kai",
+          "nalu",
+          "au",
+          "ʻale"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kō",
+      "kālua",
+      "ʻale",
+      "ʻulua",
+      "kalo",
+      "paila",
+      "au",
+      "ahi",
+      "kai",
+      "palai",
+      "ʻulu",
+      "ʻaku",
+      "manini",
+      "ʻuala",
+      "nalu",
+      "hoʻomoʻa"
+    ]
+  },
+  {
+    "id": 17,
+    "groups": [
+      {
+        "label": "Body inside",
+        "words": [
+          "naʻau",
+          "puʻuwai",
+          "iwi",
+          "koko"
+        ]
+      },
+      {
+        "label": "Senses",
+        "words": [
+          "ʻike",
+          "lohe",
+          "hanu",
+          "ʻono"
+        ]
+      },
+      {
+        "label": "Emotions",
+        "words": [
+          "hilahila",
+          "hauʻoli",
+          "huhū",
+          "kaumaha"
+        ]
+      },
+      {
+        "label": "Opposites",
+        "words": [
+          "nui",
+          "liʻiliʻi",
+          "kiʻekiʻe",
+          "haʻahaʻa"
+        ]
+      }
+    ],
+    "boardWords": [
+      "lohe",
+      "kaumaha",
+      "koko",
+      "haʻahaʻa",
+      "ʻike",
+      "nui",
+      "naʻau",
+      "liʻiliʻi",
+      "hanu",
+      "iwi",
+      "hilahila",
+      "kiʻekiʻe",
+      "hauʻoli",
+      "huhū",
+      "puʻuwai",
+      "ʻono"
+    ]
+  },
+  {
+    "id": 18,
+    "groups": [
+      {
+        "label": "Music",
+        "words": [
+          "mele",
+          "hula",
+          "pahu",
+          "ʻukulele"
+        ]
+      },
+      {
+        "label": "Gatherings",
+        "words": [
+          "pāʻina",
+          "ʻaha",
+          "hālāwai",
+          "ʻahaʻaina"
+        ]
+      },
+      {
+        "label": "Giving",
+        "words": [
+          "hāʻawi",
+          "makana",
+          "hoʻokupu",
+          "kōkua"
+        ]
+      },
+      {
+        "label": "Travel",
+        "words": [
+          "huakaʻi",
+          "kaʻa",
+          "waʻa",
+          "mokulele"
+        ]
+      }
+    ],
+    "boardWords": [
+      "mokulele",
+      "pāʻina",
+      "ʻukulele",
+      "ʻaha",
+      "makana",
+      "pahu",
+      "hoʻokupu",
+      "huakaʻi",
+      "ʻahaʻaina",
+      "kaʻa",
+      "mele",
+      "hālāwai",
+      "waʻa",
+      "kōkua",
+      "hāʻawi",
+      "hula"
+    ]
+  },
+  {
+    "id": 19,
+    "groups": [
+      {
+        "label": "Money",
+        "words": [
+          "kālā",
+          "uku",
+          "kūʻai",
+          "kumukūʻai"
+        ]
+      },
+      {
+        "label": "Work words",
+        "words": [
+          "hana",
+          "ʻoihana",
+          "limahana",
+          "alakaʻi"
+        ]
+      },
+      {
+        "label": "Technology",
+        "words": [
+          "kelepona",
+          "kamepiula",
+          "polokalamu",
+          "pūnaewele"
+        ]
+      },
+      {
+        "label": "Talk",
+        "words": [
+          "ʻōlelo",
+          "nīnau",
+          "pane",
+          "hoʻolohe"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kumukūʻai",
+      "polokalamu",
+      "kelepona",
+      "kūʻai",
+      "kamepiula",
+      "limahana",
+      "alakaʻi",
+      "uku",
+      "nīnau",
+      "pūnaewele",
+      "ʻoihana",
+      "pane",
+      "ʻōlelo",
+      "kālā",
+      "hana",
+      "hoʻolohe"
+    ]
+  },
+  {
+    "id": 20,
+    "groups": [
+      {
+        "label": "Land divisions",
+        "words": [
+          "mokupuni",
+          "moku",
+          "ahupuaʻa",
+          "ʻili"
+        ]
+      },
+      {
+        "label": "Ceremony",
+        "words": [
+          "oli",
+          "hula",
+          "kapu",
+          "hoʻokupu"
+        ]
+      },
+      {
+        "label": "Ocean travel",
+        "words": [
+          "hōkū",
+          "makani",
+          "kai",
+          "waʻa"
+        ]
+      },
+      {
+        "label": "Values",
+        "words": [
+          "aloha",
+          "pono",
+          "lōkahi",
+          "kuleana"
+        ]
+      }
+    ],
+    "boardWords": [
+      "moku",
+      "ʻili",
+      "mokupuni",
+      "hōkū",
+      "hula",
+      "aloha",
+      "kuleana",
+      "lōkahi",
+      "oli",
+      "waʻa",
+      "pono",
+      "makani",
+      "kai",
+      "hoʻokupu",
+      "kapu",
+      "ahupuaʻa"
+    ]
+  },
+  {
+    "id": 21,
+    "groups": [
+      {
+        "label": "Starts with hoʻo",
+        "words": [
+          "hoʻomaka",
+          "hoʻopau",
+          "hoʻolohe",
+          "hoʻomaʻemaʻe"
+        ]
+      },
+      {
+        "label": "Time order",
+        "words": [
+          "mua",
+          "waena",
+          "hope",
+          "pau"
+        ]
+      },
+      {
+        "label": "Weather feel",
+        "words": [
+          "wela",
+          "anu",
+          "pulu",
+          "maloʻo"
+        ]
+      },
+      {
+        "label": "Garden verbs",
+        "words": [
+          "kanu",
+          "mahi",
+          "ʻohi",
+          "ʻeli"
+        ]
+      }
+    ],
+    "boardWords": [
+      "hoʻolohe",
+      "hoʻomaʻemaʻe",
+      "ʻeli",
+      "kanu",
+      "anu",
+      "hoʻopau",
+      "wela",
+      "maloʻo",
+      "pau",
+      "hoʻomaka",
+      "hope",
+      "pulu",
+      "ʻohi",
+      "waena",
+      "mua",
+      "mahi"
+    ]
+  },
+  {
+    "id": 22,
+    "groups": [
+      {
+        "label": "Ends with wai",
+        "words": [
+          "wai",
+          "waiū",
+          "waiwai",
+          "ʻauwai"
+        ]
+      },
+      {
+        "label": "Land and farming",
+        "words": [
+          "ʻāina",
+          "loʻi",
+          "māla",
+          "kula"
+        ]
+      },
+      {
+        "label": "Speak and write",
+        "words": [
+          "ʻōlelo",
+          "kākau",
+          "heluhelu",
+          "nīnau"
+        ]
+      },
+      {
+        "label": "Work words",
+        "words": [
+          "hana",
+          "mahi",
+          "ʻimi",
+          "lawelawe"
+        ]
+      }
+    ],
+    "boardWords": [
+      "lawelawe",
+      "kula",
+      "hana",
+      "mahi",
+      "ʻimi",
+      "kākau",
+      "wai",
+      "waiwai",
+      "māla",
+      "ʻāina",
+      "loʻi",
+      "ʻauwai",
+      "ʻōlelo",
+      "heluhelu",
+      "nīnau",
+      "waiū"
+    ]
+  },
+  {
+    "id": 23,
+    "groups": [
+      {
+        "label": "Starts with hoʻo",
+        "words": [
+          "hoʻohui",
+          "hoʻololi",
+          "hoʻomau",
+          "hoʻāʻo"
+        ]
+      },
+      {
+        "label": "Transport",
+        "words": [
+          "kaʻa",
+          "waʻa",
+          "mokulele",
+          "kaʻaahi"
+        ]
+      },
+      {
+        "label": "Technology",
+        "words": [
+          "kelepona",
+          "kamepiula",
+          "polokalamu",
+          "pūnaewele"
+        ]
+      },
+      {
+        "label": "Workplace roles",
+        "words": [
+          "luna",
+          "limahana",
+          "alakaʻi",
+          "ʻoihana"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kelepona",
+      "kaʻa",
+      "kaʻaahi",
+      "hoʻohui",
+      "kamepiula",
+      "hoʻololi",
+      "alakaʻi",
+      "luna",
+      "polokalamu",
+      "hoʻāʻo",
+      "waʻa",
+      "pūnaewele",
+      "mokulele",
+      "ʻoihana",
+      "hoʻomau",
+      "limahana"
+    ]
+  },
+  {
+    "id": 24,
+    "groups": [
+      {
+        "label": "Fish",
+        "words": [
+          "ahi",
+          "ʻaku",
+          "ʻulua",
+          "manini"
+        ]
+      },
+      {
+        "label": "Birds",
+        "words": [
+          "nēnē",
+          "pueo",
+          "ʻio",
+          "manu"
+        ]
+      },
+      {
+        "label": "Trees",
+        "words": [
+          "koa",
+          "kukui",
+          "hala",
+          "niu"
+        ]
+      },
+      {
+        "label": "Ocean terms",
+        "words": [
+          "kai",
+          "nalu",
+          "au",
+          "ʻale"
+        ]
+      }
+    ],
+    "boardWords": [
+      "koa",
+      "manu",
+      "ʻaku",
+      "nēnē",
+      "pueo",
+      "ʻulua",
+      "ʻio",
+      "niu",
+      "au",
+      "nalu",
+      "kukui",
+      "manini",
+      "hala",
+      "kai",
+      "ahi",
+      "ʻale"
+    ]
+  },
+  {
+    "id": 25,
+    "groups": [
+      {
+        "label": "Instruments",
+        "words": [
+          "ʻukulele",
+          "kīkā",
+          "pila",
+          "pahu"
+        ]
+      },
+      {
+        "label": "Giving",
+        "words": [
+          "hāʻawi",
+          "makana",
+          "kōkua",
+          "hoʻokupu"
+        ]
+      },
+      {
+        "label": "People groups",
+        "words": [
+          "ʻohana",
+          "hoaloha",
+          "kaiāulu",
+          "lāhui"
+        ]
+      },
+      {
+        "label": "Emotions",
+        "words": [
+          "hauʻoli",
+          "hilahila",
+          "huhū",
+          "makaʻu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "hauʻoli",
+      "kīkā",
+      "hāʻawi",
+      "hoaloha",
+      "pahu",
+      "kaiāulu",
+      "ʻohana",
+      "lāhui",
+      "makana",
+      "hilahila",
+      "kōkua",
+      "ʻukulele",
+      "pila",
+      "huhū",
+      "makaʻu",
+      "hoʻokupu"
+    ]
+  },
+  {
+    "id": 26,
+    "groups": [
+      {
+        "label": "Kalo farming",
+        "words": [
+          "kalo",
+          "loʻi",
+          "ʻauwai",
+          "huli"
+        ]
+      },
+      {
+        "label": "Water places",
+        "words": [
+          "kahawai",
+          "loko",
+          "muliwai",
+          "wai"
+        ]
+      },
+      {
+        "label": "Work actions",
+        "words": [
+          "kanu",
+          "mahi",
+          "ʻohi",
+          "ʻeli"
+        ]
+      },
+      {
+        "label": "Containers",
+        "words": [
+          "ipu",
+          "ʻeke",
+          "hue",
+          "pahu"
+        ]
+      }
+    ],
+    "boardWords": [
+      "ʻeli",
+      "mahi",
+      "loʻi",
+      "ipu",
+      "kahawai",
+      "kanu",
+      "wai",
+      "loko",
+      "kalo",
+      "muliwai",
+      "hue",
+      "ʻohi",
+      "pahu",
+      "huli",
+      "ʻauwai",
+      "ʻeke"
+    ]
+  },
+  {
+    "id": 27,
+    "groups": [
+      {
+        "label": "Starts with hoʻo",
+        "words": [
+          "hoʻāʻo",
+          "hoʻomaopopo",
+          "hoʻolohe",
+          "hoʻopaʻa"
+        ]
+      },
+      {
+        "label": "School actions",
+        "words": [
+          "heluhelu",
+          "kākau",
+          "nīnau",
+          "aʻo"
+        ]
+      },
+      {
+        "label": "Cleaning",
+        "words": [
+          "holoi",
+          "pulumi",
+          "kopa",
+          "hoʻomaʻemaʻe"
+        ]
+      },
+      {
+        "label": "House parts",
+        "words": [
+          "puka",
+          "pukaaniani",
+          "paia",
+          "kaupaku"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kopa",
+      "kaupaku",
+      "nīnau",
+      "heluhelu",
+      "hoʻāʻo",
+      "paia",
+      "hoʻomaopopo",
+      "aʻo",
+      "pukaaniani",
+      "hoʻolohe",
+      "puka",
+      "hoʻomaʻemaʻe",
+      "holoi",
+      "pulumi",
+      "hoʻopaʻa",
+      "kākau"
+    ]
+  },
+  {
+    "id": 28,
+    "groups": [
+      {
+        "label": "Weather events",
+        "words": [
+          "ua",
+          "makani",
+          "noe",
+          "hekili"
+        ]
+      },
+      {
+        "label": "Canoe parts",
+        "words": [
+          "waʻa",
+          "hoe",
+          "ama",
+          "ʻiako"
+        ]
+      },
+      {
+        "label": "Landforms",
+        "words": [
+          "mauna",
+          "puʻu",
+          "awāwa",
+          "pali"
+        ]
+      },
+      {
+        "label": "Values",
+        "words": [
+          "aloha",
+          "pono",
+          "mālama",
+          "hoʻomanawanui"
+        ]
+      }
+    ],
+    "boardWords": [
+      "makani",
+      "mauna",
+      "aloha",
+      "ama",
+      "noe",
+      "mālama",
+      "hoe",
+      "waʻa",
+      "ʻiako",
+      "pono",
+      "pali",
+      "hekili",
+      "awāwa",
+      "puʻu",
+      "ua",
+      "hoʻomanawanui"
+    ]
+  },
+  {
+    "id": 29,
+    "groups": [
+      {
+        "label": "Teen numbers",
+        "words": [
+          "ʻumikūmākahi",
+          "ʻumikūmālua",
+          "ʻumikūmākolu",
+          "ʻumikūmāhā"
+        ]
+      },
+      {
+        "label": "Months May-Aug",
+        "words": [
+          "Mei",
+          "Iune",
+          "Iulai",
+          "ʻAukake"
+        ]
+      },
+      {
+        "label": "Times of day",
+        "words": [
+          "kakahiaka",
+          "awakea",
+          "ahiahi",
+          "pō"
+        ]
+      },
+      {
+        "label": "Time units",
+        "words": [
+          "lā",
+          "pule",
+          "mahina",
+          "makahiki"
+        ]
+      }
+    ],
+    "boardWords": [
+      "awakea",
+      "ʻumikūmākahi",
+      "makahiki",
+      "pō",
+      "ʻumikūmāhā",
+      "ʻumikūmālua",
+      "ʻumikūmākolu",
+      "Iulai",
+      "Iune",
+      "pule",
+      "kakahiaka",
+      "lā",
+      "ahiahi",
+      "mahina",
+      "ʻAukake",
+      "Mei"
+    ]
+  },
+  {
+    "id": 30,
+    "groups": [
+      {
+        "label": "Society roles",
+        "words": [
+          "aliʻi",
+          "kahuna",
+          "makaʻāinana",
+          "mōʻī"
+        ]
+      },
+      {
+        "label": "Land divisions",
+        "words": [
+          "mokupuni",
+          "moku",
+          "ahupuaʻa",
+          "ʻili"
+        ]
+      },
+      {
+        "label": "Ceremony",
+        "words": [
+          "oli",
+          "hula",
+          "pule",
+          "hoʻokupu"
+        ]
+      },
+      {
+        "label": "Ocean travel",
+        "words": [
+          "hōkū",
+          "makani",
+          "kai",
+          "waʻa"
+        ]
+      }
+    ],
+    "boardWords": [
+      "kai",
+      "pule",
+      "mōʻī",
+      "makani",
+      "makaʻāinana",
+      "kahuna",
+      "hula",
+      "hoʻokupu",
+      "hōkū",
+      "ahupuaʻa",
+      "aliʻi",
+      "oli",
+      "mokupuni",
+      "moku",
+      "waʻa",
+      "ʻili"
+    ]
+  }
+]

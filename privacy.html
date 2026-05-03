@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf7f2">
+    <title>Privacy Policy — Rootz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf7f2;
+            --surface: #ffffff;
+            --ink: #1a1614;
+            --ink-soft: #4a4540;
+            --ink-muted: #8a8580;
+            --line: #e8e1d6;
+            --accent: #5e3a9e;
+            --font-display: 'Source Serif 4', Georgia, serif;
+            --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        html[data-theme="dark"] {
+            --bg: #15171c;
+            --surface: #1e2128;
+            --ink: #e8e6e1;
+            --ink-soft: #b3afa6;
+            --ink-muted: #7a7670;
+            --line: #2d3138;
+            --accent: #a98ce0;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+        main { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+        h1 { font-family: var(--font-display); font-weight: 500; font-size: 2.2rem; margin: 0 0 0.5rem; line-height: 1.15; }
+        .lead { color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 2rem; }
+        h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; margin: 2.25rem 0 0.6rem; }
+        p { color: var(--ink-soft); margin: 0 0 1rem; }
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+        a:hover { border-bottom-color: var(--accent); }
+        .nav-back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; color: var(--ink-muted); }
+        .meta { font-size: 0.85rem; color: var(--ink-muted); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+        .kindness {
+            background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem 1.75rem;
+            border-radius: 12px;
+            margin: 1.5rem 0 2.5rem;
+        }
+        .kindness .kind-headline {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin: 0 0 0.6rem;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+        .kindness p {
+            margin: 0;
+            color: var(--ink);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+    <script>
+        (function(){try{var t=localStorage.getItem('rootz_theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+    </script>
+</head>
+<body>
+<main>
+    <a href="index.html" class="nav-back">← Back to Rootz</a>
+    <h1>Privacy Policy</h1>
+
+    <div class="kindness">
+        <p class="kind-headline">Be kind.</p>
+        <p>That includes how we treat your information. Rootz collects nothing about you. There is no sign in, no account, no analytics, no tracking. The rest of this page is just the detail behind that promise.</p>
+    </div>
+
+    <h2>What we collect</h2>
+    <p>Nothing personal. There is no account to create. We do not ask for your name, email, age, or location.</p>
+    <p>Your puzzle progress, daily streak, and stats live in your own browser via localStorage. They never leave your device.</p>
+
+    <h2>Analytics and tracking</h2>
+    <p>Rootz does not use Google Analytics or any other analytics service. There are no third party trackers, pixels, or fingerprinting scripts on this site.</p>
+    <p>The site is a static page hosted on GitHub Pages. GitHub may keep its own basic server logs (for example, IP address and user agent) for security and abuse prevention, the same way any web host does. We do not have access to these logs and we do not use them.</p>
+
+    <h2>Fonts and other resources</h2>
+    <p>Fonts are loaded from Google Fonts. When your browser fetches a font, Google sees the request the same way any web server sees a request. We do not pass any data about you with the request beyond what your browser sends to any site.</p>
+    <p>If you want to avoid this entirely, you can use a browser that blocks third party requests, or run the site offline once it has been installed as a Progressive Web App.</p>
+
+    <h2>What we do not do</h2>
+    <p>We do not sell or share data. There is nothing to sell or share.</p>
+    <p>We do not run ads.</p>
+    <p>We do not track you around the web.</p>
+    <p>We do not email you. There is no mailing list.</p>
+
+    <h2>How your data is stored</h2>
+    <p>Local progress lives in your browser via localStorage. You can clear it any time using your browser site data tools, or by clicking Reset stats inside the Stats panel.</p>
+
+    <h2>If you want your data deleted</h2>
+    <p>Click Reset stats in the Stats panel to clear local data. There is nothing on a server to delete because nothing about you was ever sent to one.</p>
+
+    <h2>Contact</h2>
+    <p>For privacy questions, feedback, or anything else, send a message on <a href="https://www.linkedin.com/in/olinlagon/" target="_blank" rel="noopener">LinkedIn</a> or open an issue on <a href="https://github.com/olagon/rootz/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If anything here changes, we will update this page and note the change at the bottom. If the change affects you in a meaningful way, we will say so on the home page.</p>
+
+    <p class="meta">Last updated: May 3, 2026.</p>
+</main>
+</body>
+</html>
