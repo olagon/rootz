@@ -485,14 +485,67 @@ function initGame(puzzles, mode, forcedId = null) {
     const tiles = [...els.board.querySelectorAll(".tile")]
       .filter(t => wordSet.has(t.dataset.word));
 
-    if (tiles.length === 0) return;
+    if (tiles.length === 0) {
+      showToast("No tiles to hint");
+      return;
+    }
 
-    tiles.forEach(t => t.classList.add("hinted"));
+    // Persist hint usage BEFORE painting, so if the page reloads
+    // mid-animation, the spent state is preserved.
+    state.hintsUsed += 1;
+    saveState(state.storageKey, state.persist());
+
+    // Paint inline so the highlight cannot be defeated by stale CSS
+    // or service worker caches. Class is added too for nicer pulse on
+    // browsers that have the new stylesheet.
+    const HINT_BG = "#c4602b";          // --warm
+    const HINT_BG_DARK = "#e89060";     // dark mode --warm
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const bg = isDark ? HINT_BG_DARK : HINT_BG;
+
+    const saved = tiles.map(t => ({
+      el: t,
+      bg: t.style.background,
+      color: t.style.color,
+      border: t.style.borderColor,
+      shadow: t.style.boxShadow,
+      transform: t.style.transform,
+      transition: t.style.transition,
+      zIndex: t.style.zIndex,
+      position: t.style.position,
+    }));
+
+    tiles.forEach(t => {
+      t.classList.add("hinted");
+      t.style.transition = "transform 180ms ease, box-shadow 180ms ease, background 180ms ease";
+      t.style.background = bg;
+      t.style.color = "#ffffff";
+      t.style.borderColor = bg;
+      t.style.boxShadow = "0 6px 20px rgba(196, 96, 43, 0.45), 0 0 0 3px rgba(196, 96, 43, 0.55)";
+      t.style.transform = "scale(1.05)";
+      t.style.position = "relative";
+      t.style.zIndex = "2";
+    });
+
+    // Auto-scroll the board into view if needed.
+    if (els.board.scrollIntoView) {
+      els.board.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
     setTimeout(() => {
-      tiles.forEach(t => t.classList.remove("hinted"));
+      saved.forEach(s => {
+        s.el.classList.remove("hinted");
+        s.el.style.background = s.bg;
+        s.el.style.color = s.color;
+        s.el.style.borderColor = s.border;
+        s.el.style.boxShadow = s.shadow;
+        s.el.style.transform = s.transform;
+        s.el.style.transition = s.transition;
+        s.el.style.zIndex = s.zIndex;
+        s.el.style.position = s.position;
+      });
     }, HINT_HIGHLIGHT_MS);
 
-    state.hintsUsed += 1;
     showToast("Hint: these 4 belong together");
     render(state);
   }
