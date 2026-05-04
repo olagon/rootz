@@ -1,9 +1,11 @@
 // Rootz
-// Fully static. Loads puzzles.json. Saves progress locally.
+// Per-puzzle progression model. Goal: solve all 80 puzzles.
+// Solved puzzles stay solved. Failing a puzzle locks it for 24 hours.
 
 const PUZZLES_URL = "./puzzles.json";
 const MAX_MISTAKES = 4;
 const HINT_HIGHLIGHT_MS = 4000;
+const LOCK_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 const els = {
   subtitle: document.getElementById("subtitle"),
@@ -11,6 +13,8 @@ const els = {
   mistakesLeft: document.getElementById("mistakesLeft"),
   solvedGroups: document.getElementById("solvedGroups"),
   board: document.getElementById("board"),
+  boardWrap: document.getElementById("boardWrap"),
+  controls: document.getElementById("controls"),
   hintBtn: document.getElementById("hintBtn"),
   shuffleBtn: document.getElementById("shuffleBtn"),
   clearBtn: document.getElementById("clearBtn"),
@@ -21,21 +25,27 @@ const els = {
   howModal: document.getElementById("howModal"),
   statsModal: document.getElementById("statsModal"),
   endModal: document.getElementById("endModal"),
-  archiveModal: document.getElementById("archiveModal"),
+  endNextBtn: document.getElementById("endNextBtn"),
+  pickerModal: document.getElementById("pickerModal"),
+  puzzleGrid: document.getElementById("puzzleGrid"),
   archiveBtn: document.getElementById("archiveBtn"),
-  practiceBtn: document.getElementById("practiceBtn"),
-  archiveSelect: document.getElementById("archiveSelect"),
-  openArchiveSelectedBtn: document.getElementById("openArchiveSelectedBtn"),
   endSummary: document.getElementById("endSummary"),
-  resultGrid: document.getElementById("resultGrid"),
-  copyBtn: document.getElementById("copyBtn"),
+  endDetail: document.getElementById("endDetail"),
   resetStatsBtn: document.getElementById("resetStatsBtn"),
-  statPlayed: document.getElementById("statPlayed"),
+  statSolved: document.getElementById("statSolved"),
+  statRemaining: document.getElementById("statRemaining"),
+  statAttempts: document.getElementById("statAttempts"),
   statWinPct: document.getElementById("statWinPct"),
-  statStreak: document.getElementById("statStreak"),
-  statBest: document.getElementById("statBest"),
+  reminderToggle: document.getElementById("reminderToggle"),
+  reminderStatus: document.getElementById("reminderStatus"),
+  progressLine: document.getElementById("progressLine"),
+  lockedCard: document.getElementById("lockedCard"),
+  lockedTitle: document.getElementById("lockedTitle"),
+  lockedBody: document.getElementById("lockedBody"),
+  lockedPickBtn: document.getElementById("lockedPickBtn"),
 };
 
+// ---------- Utilities ----------
 function todayISO() {
   const d = new Date();
   const yyyy = d.getFullYear();
@@ -44,19 +54,9 @@ function todayISO() {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-function daysSince(dateISO) {
-  const [y, m, d] = dateISO.split("-").map(Number);
-  const t0 = new Date(y, m - 1, d).setHours(0, 0, 0, 0);
-  const t1 = new Date().setHours(0, 0, 0, 0);
-  return Math.floor((t1 - t0) / 86400000);
-}
-
 function getQuery() {
   const p = new URLSearchParams(location.search);
-  return {
-    id: p.get("id") ? Number(p.get("id")) : null,
-    mode: p.get("mode") || null,
-  };
+  return { id: p.get("id") ? Number(p.get("id")) : null };
 }
 
 function showToast(msg) {
@@ -66,13 +66,8 @@ function showToast(msg) {
   showToast._t = setTimeout(() => els.toast.classList.remove("show"), 1800);
 }
 
-function openModal(modal) {
-  if (!modal.open) modal.showModal();
-}
-
-function closeModal(modal) {
-  if (modal.open) modal.close();
-}
+function openModal(modal) { if (modal && !modal.open) modal.showModal(); }
+function closeModal(modal) { if (modal && modal.open) modal.close(); }
 
 document.addEventListener("click", (e) => {
   const btn = e.target.closest("[data-close]");
@@ -82,54 +77,108 @@ document.addEventListener("click", (e) => {
   if (modal) closeModal(modal);
 });
 
-function loadStats() {
-  const raw = localStorage.getItem("rootz:stats");
-  if (!raw) return { played: 0, wins: 0, losses: 0, streak: 0, bestStreak: 0, lastWinDate: null };
-  try { return JSON.parse(raw); } catch { return { played: 0, wins: 0, losses: 0, streak: 0, bestStreak: 0, lastWinDate: null }; }
-}
-
-function saveStats(s) {
-  localStorage.setItem("rootz:stats", JSON.stringify(s));
-}
-
-function updateStatsUI() {
-  const s = loadStats();
-  els.statPlayed.textContent = String(s.played);
-  const winPct = s.played ? Math.round((s.wins / s.played) * 100) : 0;
-  els.statWinPct.textContent = `${winPct}%`;
-  els.statStreak.textContent = String(s.streak);
-  els.statBest.textContent = String(s.bestStreak);
-}
-
-function stableKey(mode, dateISO, puzzleId) {
-  return `rootz:${mode}:${dateISO}:p${puzzleId}`;
-}
-
-function loadState(key) {
-  const raw = localStorage.getItem(key);
-  if (!raw) return null;
-  try { return JSON.parse(raw); } catch { return null; }
-}
-
-function saveState(key, state) {
-  localStorage.setItem(key, JSON.stringify(state));
-}
-
-function normalizeSet(a) {
-  return [...a].sort().join("||");
-}
+function normalizeSet(a) { return [...a].sort().join("||"); }
 
 function computeGroupColor(index) {
   return ["var(--g1)","var(--g2)","var(--g3)","var(--g4)"][index % 4];
 }
-
-function colorToEmoji(colorVar) {
-  if (colorVar === "var(--g1)") return "🟨";
-  if (colorVar === "var(--g2)") return "🟦";
-  if (colorVar === "var(--g3)") return "🟪";
-  return "🟩";
+function colorVarFor(index) {
+  return ["var(--g1)","var(--g2)","var(--g3)","var(--g4)"][index % 4];
+}
+function formatUnlockTime(lockUntil) {
+  const d = new Date(lockUntil);
+  const now = new Date();
+  const sameDay = d.toDateString() === now.toDateString();
+  const opts = { hour: "numeric", minute: "2-digit" };
+  if (sameDay) return `today at ${d.toLocaleTimeString([], opts)}`;
+  const tomorrow = new Date(now); tomorrow.setDate(tomorrow.getDate() + 1);
+  if (d.toDateString() === tomorrow.toDateString()) return `tomorrow at ${d.toLocaleTimeString([], opts)}`;
+  const dateOpts = { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" };
+  return d.toLocaleString([], dateOpts);
 }
 
+// ---------- Stats / progress ----------
+const STATS_KEY = "rootz:stats";
+
+function emptyStats() {
+  return {
+    totalAttempts: 0,
+    puzzles: {}, // { "1": { solved:false, lockUntil:0, attempts:0, lastAttempt:0 } }
+  };
+}
+
+function loadStats() {
+  const raw = localStorage.getItem(STATS_KEY);
+  if (!raw) return emptyStats();
+  try {
+    const parsed = JSON.parse(raw);
+    // Migrate older shapes (with played/wins/streak/etc) by dropping them
+    // and starting fresh on the new schema, while preserving any existing
+    // puzzles map if one was already saved.
+    if (!parsed.puzzles || typeof parsed.puzzles !== "object") parsed.puzzles = {};
+    if (typeof parsed.totalAttempts !== "number") parsed.totalAttempts = 0;
+    return { totalAttempts: parsed.totalAttempts, puzzles: parsed.puzzles };
+  } catch { return emptyStats(); }
+}
+
+function saveStats(s) {
+  localStorage.setItem(STATS_KEY, JSON.stringify(s));
+}
+
+function getPuzzleProgress(stats, id) {
+  return stats.puzzles[String(id)] || { solved: false, lockUntil: 0, attempts: 0, lastAttempt: 0 };
+}
+function setPuzzleProgress(stats, id, prog) {
+  stats.puzzles[String(id)] = prog;
+}
+
+function isLocked(stats, id) {
+  const p = getPuzzleProgress(stats, id);
+  return !p.solved && p.lockUntil > Date.now();
+}
+
+function countByState(stats, total) {
+  let solved = 0, attempted = 0, locked = 0;
+  for (let id = 1; id <= total; id++) {
+    const p = getPuzzleProgress(stats, id);
+    if (p.solved) solved++;
+    else if (p.lockUntil > Date.now()) locked++;
+    else if (p.attempts > 0) attempted++;
+  }
+  const unsolved = total - solved;
+  return { solved, attempted, locked, unsolved, total };
+}
+
+function nextPlayable(stats, total) {
+  for (let id = 1; id <= total; id++) {
+    const p = getPuzzleProgress(stats, id);
+    if (p.solved) continue;
+    if (p.lockUntil > Date.now()) continue;
+    return id;
+  }
+  return null;
+}
+
+function updateStatsUI(total) {
+  const s = loadStats();
+  const c = countByState(s, total);
+  if (els.statSolved)    els.statSolved.textContent    = `${c.solved}/${total}`;
+  if (els.statRemaining) els.statRemaining.textContent = String(c.unsolved);
+  if (els.statAttempts)  els.statAttempts.textContent  = String(s.totalAttempts);
+  if (els.statWinPct) {
+    const pct = s.totalAttempts ? Math.round((c.solved / s.totalAttempts) * 100) : 0;
+    els.statWinPct.textContent = `${pct}%`;
+  }
+  if (els.progressLine) {
+    if (c.solved === total) {
+      els.progressLine.textContent = `All ${total} solved! Mahalo nui.`;
+    } else {
+      els.progressLine.textContent = `${c.solved} solved · ${c.unsolved} to go`;
+    }
+  }
+}
+
+// ---------- Render ----------
 function setSubmitEnabled(state) {
   els.submitBtn.disabled = state.selected.length !== 4 || state.isOver;
 }
@@ -140,7 +189,6 @@ function unsolvedGroups(state) {
 }
 
 function hintsAvailable(state) {
-  if (state.mode === "practice") return Infinity;
   return Math.max(0, state.maxHints - state.hintsUsed);
 }
 
@@ -151,15 +199,9 @@ function setHintEnabled(state) {
   const off = state.isOver || noUnsolved || used;
   els.hintBtn.disabled = off;
   els.hintBtn.classList.toggle("spent", used && !state.isOver);
-  if (state.mode === "practice") {
-    els.hintBtn.title = "Hint";
-  } else if (used) {
-    els.hintBtn.title = state.mode === "daily"
-      ? "Hint already used today"
-      : "Hint already used for this puzzle";
-  } else {
-    els.hintBtn.title = "Use your one hint for this puzzle";
-  }
+  els.hintBtn.title = used
+    ? "Hint already used for this puzzle"
+    : "Use your one hint for this puzzle";
 }
 
 function renderSolved(state) {
@@ -203,7 +245,6 @@ function renderBoard(state) {
 
     btn.addEventListener("click", () => {
       if (state.isOver) return;
-
       const has = state.selected.includes(w);
       if (has) {
         state.selected = state.selected.filter(x => x !== w);
@@ -223,9 +264,8 @@ function renderBoard(state) {
 
 function renderMeta(state) {
   els.mistakesLeft.textContent = String(state.mistakesLeft);
-  const modeLbl = state.mode === "practice" ? "Practice" : (state.mode === "archive" ? "Archive" : "Daily");
-  els.subtitle.textContent = `${modeLbl} puzzle`;
-  els.puzzleMeta.textContent = `Puzzle ${state.puzzleId} of ${state.totalPuzzles} · ${state.dateISO}`;
+  els.subtitle.textContent = `Puzzle ${state.puzzleId} of ${state.totalPuzzles}`;
+  els.puzzleMeta.textContent = `Puzzle ${state.puzzleId} of ${state.totalPuzzles}`;
 }
 
 function render(state) {
@@ -235,90 +275,79 @@ function render(state) {
   setSubmitEnabled(state);
   setHintEnabled(state);
   saveState(state.storageKey, state.persist());
+  updateStatsUI(state.totalPuzzles);
 }
 
-function buildResultGrid(state) {
-  els.resultGrid.innerHTML = "";
-
-  // 16 squares, 4x4. Each solved group fills one row.
-  const rows = [];
-  for (const solved of state.solved) {
-    const emoji = colorToEmoji(solved.colorVar);
-    rows.push([emoji, emoji, emoji, emoji]);
-  }
-  while (rows.length < 4) rows.push(["⬛","⬛","⬛","⬛"]);
-
-  for (const row of rows) {
-    for (const _ of row) {
-      const div = document.createElement("div");
-      div.className = "square";
-      els.resultGrid.appendChild(div);
-    }
-  }
-
-  // Paint squares row by row.
-  const squares = [...els.resultGrid.querySelectorAll(".square")];
-  let idx = 0;
-  for (const solved of state.solved) {
-    const color = solved.color;
-    for (let k = 0; k < 4; k++) {
-      squares[idx].style.background = color;
-      idx++;
-    }
-  }
+// ---------- State persistence (current puzzle progress) ----------
+function stableKey(puzzleId) {
+  return `rootz:puzzle:${puzzleId}`;
 }
 
+function loadState(key) {
+  const raw = localStorage.getItem(key);
+  if (!raw) return null;
+  try { return JSON.parse(raw); } catch { return null; }
+}
+
+function saveState(key, state) {
+  localStorage.setItem(key, JSON.stringify(state));
+}
+
+// ---------- Game lifecycle ----------
 function finishGame(state, didWin) {
   state.isOver = true;
 
   const stats = loadStats();
-  stats.played += 1;
-  if (didWin) stats.wins += 1;
-  else stats.losses += 1;
-
-  if (state.mode === "daily") {
-    if (didWin) {
-      const t = state.dateISO;
-      if (stats.lastWinDate) {
-        const y = new Date();
-        y.setDate(y.getDate() - 1);
-        const yyyy = y.getFullYear();
-        const mm = String(y.getMonth() + 1).padStart(2, "0");
-        const dd = String(y.getDate()).padStart(2, "0");
-        const yesterdayISO = `${yyyy}-${mm}-${dd}`;
-        if (stats.lastWinDate === yesterdayISO) stats.streak += 1;
-        else stats.streak = 1;
-      } else {
-        stats.streak = 1;
-      }
-      stats.bestStreak = Math.max(stats.bestStreak, stats.streak);
-      stats.lastWinDate = t;
-    } else {
-      stats.streak = 0;
-    }
+  const id = state.puzzleId;
+  const prog = { ...getPuzzleProgress(stats, id) };
+  prog.attempts += 1;
+  prog.lastAttempt = Date.now();
+  if (didWin) {
+    prog.solved = true;
+    prog.lockUntil = 0;
+  } else {
+    prog.lockUntil = Date.now() + LOCK_MS;
   }
-
+  setPuzzleProgress(stats, id, prog);
+  stats.totalAttempts += 1;
   saveStats(stats);
-  updateStatsUI();
+  updateStatsUI(state.totalPuzzles);
 
   const solvedCount = state.solved.length;
   const attempts = state.attempts.length;
-  els.endSummary.textContent = didWin ? `Solved ${solvedCount}/4 in ${attempts} tries` : `Ended at ${solvedCount}/4`;
+  els.endSummary.textContent = didWin
+    ? `Solved 4 of 4 in ${attempts} tries`
+    : `Ended at ${solvedCount} of 4`;
 
-  buildResultGrid(state);
+  if (els.endDetail) {
+    if (didWin) {
+      const c = countByState(loadStats(), state.totalPuzzles);
+      els.endDetail.textContent = c.unsolved === 0
+        ? "You have solved every puzzle. Mahalo nui."
+        : `${c.solved} of ${state.totalPuzzles} solved · ${c.unsolved} to go`;
+    } else {
+      els.endDetail.textContent = "Locked for 24 hours. Pick another puzzle and come back to this one tomorrow.";
+    }
+  }
+
+  // Configure "Next puzzle" button based on what's available
+  if (els.endNextBtn) {
+    const next = nextPlayable(loadStats(), state.totalPuzzles);
+    if (next && next !== state.puzzleId) {
+      els.endNextBtn.hidden = false;
+      els.endNextBtn.textContent = `Next puzzle (${next})`;
+      els.endNextBtn.onclick = () => goToPuzzle(next);
+    } else if (countByState(loadStats(), state.totalPuzzles).unsolved === 0) {
+      els.endNextBtn.hidden = false;
+      els.endNextBtn.textContent = "All solved";
+      els.endNextBtn.disabled = true;
+    } else {
+      els.endNextBtn.hidden = true;
+    }
+  }
+
   openModal(els.endModal);
   render(state);
-}
-
-function computeShareText(state, didWin) {
-  const header = `Rootz #${state.puzzleId} ${state.dateISO}`;
-  const status = didWin ? `Win in ${state.attempts.length}` : `No win`;
-  const lines = state.solved.map((s) => {
-    const e = colorToEmoji(s.colorVar);
-    return `${e}${e}${e}${e}`;
-  });
-  while (lines.length < 4) lines.push("⬛⬛⬛⬛");
-  return [header, status, ...lines].join("\n");
 }
 
 async function registerSW() {
@@ -326,33 +355,106 @@ async function registerSW() {
   try { await navigator.serviceWorker.register("./sw.js"); } catch {}
 }
 
-function buildArchive(puzzles) {
-  els.archiveSelect.innerHTML = "";
-  for (const p of puzzles) {
-    const opt = document.createElement("option");
-    opt.value = String(p.id);
-    opt.textContent = `Puzzle ${p.id}`;
-    els.archiveSelect.appendChild(opt);
+// ---------- Locked card ----------
+function showLockedCard(puzzleId, lockUntil, total) {
+  els.boardWrap.hidden = true;
+  els.controls.hidden = true;
+  els.solvedGroups.hidden = true;
+  els.lockedCard.hidden = false;
+  els.lockedTitle.textContent = `Puzzle ${puzzleId} is locked`;
+  els.lockedBody.textContent = `You can try this one again ${formatUnlockTime(lockUntil)}.`;
+  els.subtitle.textContent = `Puzzle ${puzzleId} of ${total} · locked`;
+  els.puzzleMeta.textContent = `Locked`;
+  els.lockedPickBtn.onclick = () => openModal(els.pickerModal);
+}
+
+function hideLockedCard() {
+  els.boardWrap.hidden = false;
+  els.controls.hidden = false;
+  els.solvedGroups.hidden = false;
+  els.lockedCard.hidden = true;
+}
+
+// ---------- Puzzle picker grid ----------
+let allPuzzles = [];
+
+function buildPickerGrid() {
+  if (!els.puzzleGrid) return;
+  const stats = loadStats();
+  const now = Date.now();
+  els.puzzleGrid.innerHTML = "";
+  const frag = document.createDocumentFragment();
+  for (const p of allPuzzles) {
+    const prog = getPuzzleProgress(stats, p.id);
+    const cell = document.createElement("button");
+    cell.type = "button";
+    cell.className = "pcell";
+    cell.dataset.id = String(p.id);
+    cell.setAttribute("role", "gridcell");
+
+    let state, marker = "";
+    if (prog.solved) { state = "solved"; marker = "✓"; }
+    else if (prog.lockUntil > now) { state = "locked"; marker = "🔒"; }
+    else if (prog.attempts > 0) { state = "attempted"; }
+    else { state = "unsolved"; }
+    cell.classList.add(state);
+
+    cell.innerHTML = `<span class="pn">${p.id}</span>` + (marker ? `<span class="pm" aria-hidden="true">${marker}</span>` : "");
+
+    let title = `Puzzle ${p.id}`;
+    if (state === "solved") title += " — Solved";
+    else if (state === "locked") title += ` — Locked until ${formatUnlockTime(prog.lockUntil)}`;
+    else if (state === "attempted") title += ` — Attempted (${prog.attempts} tries)`;
+    else title += " — New";
+    cell.title = title;
+    cell.setAttribute("aria-label", title);
+
+    cell.addEventListener("click", () => {
+      if (state === "locked") {
+        showToast(`Locked until ${formatUnlockTime(prog.lockUntil)}`);
+        return;
+      }
+      closeModal(els.pickerModal);
+      goToPuzzle(p.id);
+    });
+
+    frag.appendChild(cell);
   }
+  els.puzzleGrid.appendChild(frag);
 }
 
-function pickDailyPuzzle(puzzles) {
-  const start = "2026-01-01";
-  const offset = Math.max(0, daysSince(start));
-  const index = offset % puzzles.length;
-  return puzzles[index];
+// ---------- Navigation ----------
+function goToPuzzle(id) {
+  const u = new URL(location.href);
+  u.searchParams.set("id", String(id));
+  location.href = u.toString();
 }
 
-function initGame(puzzles, mode, forcedId = null) {
-  const dateISO = todayISO();
-  const totalPuzzles = puzzles.length;
+// ---------- Game init ----------
+function initGame(puzzles, requestedId = null) {
+  const stats = loadStats();
+  const total = puzzles.length;
 
-  let puzzle = null;
-  if (forcedId) puzzle = puzzles.find(p => p.id === forcedId) || puzzles[0];
-  else if (mode === "practice") puzzle = puzzles[Math.floor(Math.random() * puzzles.length)];
-  else puzzle = pickDailyPuzzle(puzzles);
+  let id = requestedId;
+  if (!id) {
+    const next = nextPlayable(stats, total);
+    id = next || 1;
+  }
+  if (id < 1 || id > total) id = 1;
 
-  const storageKey = stableKey(mode, mode === "daily" ? dateISO : (mode === "practice" ? "practice" : "archive"), puzzle.id);
+  const puzzle = puzzles.find(p => p.id === id) || puzzles[0];
+
+  // Locked check (only blocks if not already solved)
+  if (isLocked(stats, puzzle.id)) {
+    const prog = getPuzzleProgress(stats, puzzle.id);
+    showLockedCard(puzzle.id, prog.lockUntil, total);
+    updateStatsUI(total);
+    return null;
+  }
+
+  hideLockedCard();
+
+  const storageKey = stableKey(puzzle.id);
 
   const groupSets = puzzle.groups.map(g => ({
     label: g.label,
@@ -363,10 +465,8 @@ function initGame(puzzles, mode, forcedId = null) {
   const persisted = loadState(storageKey);
 
   const state = {
-    mode,
-    dateISO,
     puzzleId: puzzle.id,
-    totalPuzzles,
+    totalPuzzles: total,
     groups: groupSets,
     board: puzzle.boardWords.slice(),
     selected: [],
@@ -379,8 +479,6 @@ function initGame(puzzles, mode, forcedId = null) {
     storageKey,
     persist() {
       return {
-        mode: this.mode,
-        dateISO: this.dateISO,
         puzzleId: this.puzzleId,
         board: this.board,
         solved: this.solved,
@@ -392,13 +490,20 @@ function initGame(puzzles, mode, forcedId = null) {
     },
   };
 
-  if (persisted && persisted.puzzleId === puzzle.id) {
+  // Determine if we should rehydrate. If the puzzle is already solved
+  // (in stats) we treat it as a fresh replay and ignore any prior in-progress
+  // state.
+  const puzzleSolved = getPuzzleProgress(stats, puzzle.id).solved;
+  if (persisted && persisted.puzzleId === puzzle.id && !puzzleSolved && !persisted.isOver) {
     state.board = persisted.board || state.board;
     state.solved = persisted.solved || [];
     state.mistakesLeft = typeof persisted.mistakesLeft === "number" ? persisted.mistakesLeft : MAX_MISTAKES;
     state.isOver = !!persisted.isOver;
     state.attempts = persisted.attempts || [];
     state.hintsUsed = typeof persisted.hintsUsed === "number" ? persisted.hintsUsed : 0;
+  } else if (persisted && puzzleSolved) {
+    // Replay: clear the persisted in-progress state
+    localStorage.removeItem(storageKey);
   }
 
   // Normalize solved groups with colors
@@ -406,7 +511,7 @@ function initGame(puzzles, mode, forcedId = null) {
     label: s.label,
     words: s.words,
     color: s.color || computeGroupColor(idx),
-    colorVar: s.colorVar || ["var(--g1)","var(--g2)","var(--g3)","var(--g4)"][idx % 4],
+    colorVar: s.colorVar || colorVarFor(idx),
   }));
 
   // Remove solved words from board if needed
@@ -442,7 +547,7 @@ function initGame(puzzles, mode, forcedId = null) {
 
     if (match) {
       const idx = state.solved.length;
-      const colorVar = ["var(--g1)","var(--g2)","var(--g3)","var(--g4)"][idx % 4];
+      const colorVar = colorVarFor(idx);
       const color = computeGroupColor(idx);
 
       state.solved.push({ label: match.label, words: state.selected.slice(), color, colorVar });
@@ -474,7 +579,7 @@ function initGame(puzzles, mode, forcedId = null) {
   function useHint() {
     if (state.isOver) return;
     if (hintsAvailable(state) <= 0) {
-      showToast(state.mode === "daily" ? "Hint already used today" : "Hint already used");
+      showToast("Hint already used");
       return;
     }
     const candidates = unsolvedGroups(state);
@@ -490,33 +595,20 @@ function initGame(puzzles, mode, forcedId = null) {
       return;
     }
 
-    // Persist hint usage BEFORE painting, so if the page reloads
-    // mid-animation, the spent state is preserved. Update only the
-    // Hint button — do NOT call render(), because render() rebuilds
-    // the board (innerHTML = "") and would wipe the inline styles
-    // we are about to apply.
     state.hintsUsed += 1;
     saveState(state.storageKey, state.persist());
     setHintEnabled(state);
 
-    // Paint inline so the highlight cannot be defeated by stale CSS
-    // or service worker caches. Class is added too for nicer pulse on
-    // browsers that have the new stylesheet.
-    const HINT_BG = "#c4602b";          // --warm
-    const HINT_BG_DARK = "#e89060";     // dark mode --warm
+    const HINT_BG = "#c4602b";
+    const HINT_BG_DARK = "#e89060";
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
     const bg = isDark ? HINT_BG_DARK : HINT_BG;
 
     const saved = tiles.map(t => ({
       el: t,
-      bg: t.style.background,
-      color: t.style.color,
-      border: t.style.borderColor,
-      shadow: t.style.boxShadow,
-      transform: t.style.transform,
-      transition: t.style.transition,
-      zIndex: t.style.zIndex,
-      position: t.style.position,
+      bg: t.style.background, color: t.style.color, border: t.style.borderColor,
+      shadow: t.style.boxShadow, transform: t.style.transform,
+      transition: t.style.transition, zIndex: t.style.zIndex, position: t.style.position,
     }));
 
     tiles.forEach(t => {
@@ -531,7 +623,6 @@ function initGame(puzzles, mode, forcedId = null) {
       t.style.zIndex = "2";
     });
 
-    // Auto-scroll the board into view if needed.
     if (els.board.scrollIntoView) {
       els.board.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
@@ -551,8 +642,6 @@ function initGame(puzzles, mode, forcedId = null) {
     }, HINT_HIGHLIGHT_MS);
 
     showToast("Hint: these 4 belong together");
-    // Intentionally not calling render(): it would call renderBoard()
-    // which rebuilds every tile from scratch and wipe our paint.
   }
 
   els.submitBtn.onclick = submit;
@@ -561,42 +650,136 @@ function initGame(puzzles, mode, forcedId = null) {
   if (els.hintBtn) els.hintBtn.onclick = useHint;
 
   els.howBtn.onclick = () => openModal(els.howModal);
-  els.statsBtn.onclick = () => { updateStatsUI(); openModal(els.statsModal); };
-
-  els.archiveBtn.onclick = () => openModal(els.archiveModal);
-  els.practiceBtn.onclick = () => {
-    const u = new URL(location.href);
-    u.searchParams.set("mode", "practice");
-    u.searchParams.delete("id");
-    location.href = u.toString();
+  els.statsBtn.onclick = () => {
+    updateStatsUI(state.totalPuzzles);
+    refreshReminderUI();
+    openModal(els.statsModal);
   };
 
-  els.openArchiveSelectedBtn.onclick = () => {
-    const id = Number(els.archiveSelect.value);
-    const u = new URL(location.href);
-    u.searchParams.set("id", String(id));
-    u.searchParams.set("mode", "archive");
-    location.href = u.toString();
-  };
-
-  els.copyBtn.onclick = async () => {
-    const didWin = state.solved.length === 4 && state.mistakesLeft > 0;
-    const text = computeShareText(state, didWin);
-    try { await navigator.clipboard.writeText(text); showToast("Copied"); }
-    catch { showToast("Copy failed"); }
+  els.archiveBtn.onclick = () => {
+    buildPickerGrid();
+    openModal(els.pickerModal);
   };
 
   els.resetStatsBtn.onclick = () => {
-    localStorage.removeItem("rootz:stats");
-    updateStatsUI();
-    showToast("Stats reset");
+    if (!confirm("Reset all progress? This will erase every solved puzzle and unlock all locks.")) return;
+    localStorage.removeItem(STATS_KEY);
+    // Clear in-progress per-puzzle state too
+    for (let i = 1; i <= state.totalPuzzles; i++) {
+      localStorage.removeItem(stableKey(i));
+    }
+    updateStatsUI(state.totalPuzzles);
+    showToast("Progress reset");
+    setTimeout(() => location.href = "./index.html", 600);
   };
 
   render(state);
 
-  if (state.isOver) buildResultGrid(state);
-
   return state;
+}
+
+// ---------- Reminders ----------
+const REMINDER_KEY = "rootz:reminders";
+const LAST_NUDGE_KEY = "rootz:lastNudge";
+
+function reminderOptedIn() { return localStorage.getItem(REMINDER_KEY) === "on"; }
+function setReminderOptedIn(on) {
+  if (on) localStorage.setItem(REMINDER_KEY, "on");
+  else localStorage.removeItem(REMINDER_KEY);
+}
+function notificationsSupported() { return typeof window !== "undefined" && "Notification" in window; }
+
+function refreshReminderUI() {
+  if (!els.reminderToggle || !els.reminderStatus) return;
+  if (!notificationsSupported()) {
+    els.reminderToggle.checked = false;
+    els.reminderToggle.disabled = true;
+    els.reminderStatus.textContent = "This browser does not support notifications.";
+    els.reminderStatus.className = "reminderStatus warn";
+    return;
+  }
+  const perm = Notification.permission;
+  const opted = reminderOptedIn();
+  els.reminderToggle.checked = opted && perm === "granted";
+
+  if (perm === "denied") {
+    els.reminderStatus.textContent = "Notifications are blocked in your browser. Enable them in your site settings to turn this on.";
+    els.reminderStatus.className = "reminderStatus warn";
+  } else if (opted && perm === "granted") {
+    els.reminderStatus.textContent = "On. We will nudge you the next time you open Rootz with puzzles still to solve.";
+    els.reminderStatus.className = "reminderStatus ok";
+  } else {
+    els.reminderStatus.textContent = "Off. Tap the toggle to turn it on.";
+    els.reminderStatus.className = "reminderStatus";
+  }
+}
+
+async function onReminderToggle(e) {
+  const wantOn = !!e.target.checked;
+  if (!wantOn) {
+    setReminderOptedIn(false);
+    refreshReminderUI();
+    showToast("Reminders off");
+    return;
+  }
+  if (!notificationsSupported()) {
+    e.target.checked = false;
+    refreshReminderUI();
+    return;
+  }
+  try {
+    const perm = await Notification.requestPermission();
+    if (perm === "granted") {
+      setReminderOptedIn(true);
+      showToast("Reminders on");
+    } else {
+      e.target.checked = false;
+      setReminderOptedIn(false);
+      showToast("Permission not granted");
+    }
+  } catch {
+    e.target.checked = false;
+    setReminderOptedIn(false);
+  }
+  refreshReminderUI();
+}
+
+async function maybeNudgeOnLoad(total) {
+  if (!reminderOptedIn()) return;
+  if (!notificationsSupported() || Notification.permission !== "granted") return;
+
+  const stats = loadStats();
+  const c = countByState(stats, total);
+  if (c.unsolved === 0) return;  // nothing left to nudge about
+
+  // Don't nudge twice in the same calendar day.
+  const today = todayISO();
+  const lastNudge = localStorage.getItem(LAST_NUDGE_KEY);
+  if (lastNudge === today) return;
+
+  const playable = c.unsolved - c.locked;
+  const body = playable > 0
+    ? `You have ${c.unsolved} more puzzle${c.unsolved === 1 ? "" : "s"} to solve.`
+    : `You have ${c.unsolved} more to solve. They are all locked right now — try again later.`;
+
+  try {
+    const reg = navigator.serviceWorker && await navigator.serviceWorker.ready;
+    const opts = { body, icon: "./icon-192.png", badge: "./icon-192.png", tag: "rootz-daily", renotify: false };
+    if (reg && reg.showNotification) {
+      reg.showNotification("Rootz", opts);
+    } else if (window.Notification) {
+      new Notification("Rootz", opts);
+    }
+    localStorage.setItem(LAST_NUDGE_KEY, today);
+  } catch {}
+}
+
+// ---------- Bootstrap ----------
+function wireGlobalModalClose() {
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    [els.howModal, els.statsModal, els.endModal, els.pickerModal].forEach(m => closeModal(m));
+  });
 }
 
 async function loadPuzzles() {
@@ -605,13 +788,6 @@ async function loadPuzzles() {
   const data = await res.json();
   if (!Array.isArray(data) || data.length === 0) throw new Error("bad puzzles.json");
   return data;
-}
-
-function wireGlobalModalClose() {
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    [els.howModal, els.statsModal, els.endModal, els.archiveModal].forEach(m => closeModal(m));
-  });
 }
 
 (async function main() {
@@ -627,12 +803,12 @@ function wireGlobalModalClose() {
     return;
   }
 
-  buildArchive(puzzles);
+  allPuzzles = puzzles;
+  if (els.reminderToggle) els.reminderToggle.addEventListener("change", onReminderToggle);
 
   const q = getQuery();
-  const mode = q.mode === "practice" ? "practice" : (q.mode === "archive" ? "archive" : "daily");
-  const forcedId = q.id && q.id >= 1 ? q.id : null;
+  initGame(puzzles, q.id);
+  updateStatsUI(puzzles.length);
 
-  updateStatsUI();
-  initGame(puzzles, mode, forcedId);
+  maybeNudgeOnLoad(puzzles.length);
 })();

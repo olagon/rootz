@@ -468,9 +468,42 @@ button:focus-visible{
 .footerRow{
   margin-top: 0.9rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
+}
+
+.navBtn{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  min-height: var(--tap);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow: var(--shadow);
+  transition: background 0.12s ease, transform 0.08s ease;
+}
+.navBtn:hover{
+  background: var(--accent);
+  color: #ffffff;
+}
+.navBtn:active{ transform: translateY(1px); }
+.navBtn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.navBtnIcon{
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .linkBtn{
@@ -619,24 +652,18 @@ button:focus-visible{
 }
 
 .resultLine{
+  font-family: var(--font-display);
   font-weight: 500;
+  font-size: 1.2rem;
   color: var(--ink);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
-
-.resultGrid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.35rem;
-  max-width: 220px;
-}
-
-.square{
-  width: 100%;
-  padding-top: 100%;
-  border-radius: 4px;
-  background: var(--surface-warm);
-  border: 1px solid var(--line);
+.resultDetail{
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .hint{
@@ -698,6 +725,226 @@ button:focus-visible{
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+[hidden]{ display: none !important; }
+
+/* PROGRESS LINE in footerRow */
+.progressLine{
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  align-self: center;
+  font-weight: 500;
+}
+
+/* LOCKED CARD shown in place of the board when current puzzle is locked */
+.lockedCard{
+  margin-top: 1rem;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  background: color-mix(in srgb, var(--warm) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--warm) 25%, var(--line));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.lockedIcon{
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.lockedCard h3{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+.lockedCard p{
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* PUZZLE PICKER GRID */
+.modal.modal-wide{
+  max-width: 720px;
+}
+.pickerLegend{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+.legSwatch{
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  font-size: 9px;
+  line-height: 1;
+}
+.legSolved{ background: var(--warm); border-color: var(--warm); color: #ffffff; }
+.legAttempted{ background: color-mix(in srgb, var(--accent) 12%, var(--surface)); border-color: var(--accent); }
+.legLocked{ background: var(--surface-warm); border-color: var(--ink-muted); opacity: 0.7; }
+.legUnsolved{ background: var(--surface-warm); }
+.legLbl{ margin-right: 0.6rem; }
+
+.puzzleGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
+  gap: 6px;
+}
+.pcell{
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface-warm);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+  touch-action: manipulation;
+  transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
+}
+.pcell .pn{ line-height: 1; }
+.pcell .pm{
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 0.6rem;
+  line-height: 1;
+}
+.pcell:hover{ transform: scale(1.05); }
+.pcell:focus-visible{
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+.pcell.solved{
+  background: var(--warm);
+  border-color: var(--warm);
+  color: #ffffff;
+}
+.pcell.solved .pm{ color: #ffffff; }
+.pcell.attempted{
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.pcell.locked{
+  background: var(--surface-warm);
+  border-color: var(--ink-muted);
+  color: var(--ink-muted);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.pcell.locked:hover{ transform: none; }
+.pcell.unsolved{
+  background: var(--surface-warm);
+  color: var(--ink-soft);
+}
+.pcell.current{
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* REMINDERS */
+.reminderSection{
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-soft);
+}
+.reminderTop{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.reminderTop h3{
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.reminderHelp{
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+.reminderStatus{
+  margin: 0.6rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-style: italic;
+  min-height: 1em;
+}
+.reminderStatus.ok{ color: var(--success); font-style: normal; }
+.reminderStatus.warn{ color: var(--warm); font-style: normal; }
+
+/* Toggle switch */
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex: none;
+  cursor: pointer;
+}
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .slider{
+  position: absolute;
+  inset: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.switch .slider::before{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  top: 2px;
+  background: var(--surface);
+  border-radius: 50%;
+  transition: transform 0.18s ease, background 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.switch input:checked + .slider{
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.switch input:checked + .slider::before{
+  transform: translateX(20px);
+  background: #ffffff;
+}
+.switch input:focus-visible + .slider{
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+@media (max-width: 360px){
+  .pcell{ font-size: 0.82rem; }
+  .puzzleGrid{ grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: 4px; }
 }
 
 /* MORE GAMES MODAL */

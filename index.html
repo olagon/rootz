@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15171c" media="(prefers-color-scheme: dark)">
   <title>Rootz</title>
-  <meta name="description" content="A daily Hawaiian word sorting game. Find 4 groups of 4 words.">
+  <meta name="description" content="A Hawaiian word sorting game. Solve all 80 puzzles.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -40,7 +40,7 @@
         <span class="logo" aria-hidden="true">R</span>
         <span class="brandText">
           <span class="title">Rootz</span>
-          <span class="subtitle" id="subtitle">Daily puzzle</span>
+          <span class="subtitle" id="subtitle">Loading…</span>
         </span>
       </a>
 
@@ -60,7 +60,7 @@
     <main class="main">
       <section class="solvedCard introCard" aria-label="Instructions">
         <div class="solvedLabel">How to play</div>
-        <p class="introText">Select 4 words that belong together, then press Submit. Find all 4 groups to win, with up to 4 mistakes. Use Shuffle if you get stuck. To play any of the 80 day puzzles, select Play other Day Puzzles at the bottom.</p>
+        <p class="introText">Select 4 words that belong together, then press Submit. Find all 4 groups to win, with up to 4 mistakes. Use Shuffle if you get stuck. The goal is to solve all 80 puzzles. If you fail one, it locks for 24 hours and you must come back to it.</p>
       </section>
 
       <section class="statusRow" aria-live="polite">
@@ -70,11 +70,18 @@
 
       <section class="solved" id="solvedGroups" aria-label="Solved groups"></section>
 
-      <section class="boardWrap">
+      <section class="boardWrap" id="boardWrap">
         <div class="board" id="board" role="grid" aria-label="Word board"></div>
       </section>
 
-      <section class="controls">
+      <section class="lockedCard" id="lockedCard" hidden>
+        <div class="lockedIcon" aria-hidden="true">🔒</div>
+        <h3 id="lockedTitle">Puzzle locked</h3>
+        <p id="lockedBody">Locked. Come back later.</p>
+        <button class="btn primary" id="lockedPickBtn" type="button">Pick another puzzle</button>
+      </section>
+
+      <section class="controls" id="controls">
         <button class="btn ghost" id="hintBtn" type="button" aria-label="Use hint">Hint</button>
         <button class="btn ghost" id="shuffleBtn" type="button">Shuffle</button>
         <button class="btn ghost" id="clearBtn" type="button">Clear</button>
@@ -82,8 +89,11 @@
       </section>
 
       <section class="footerRow">
-        <button class="linkBtn" id="archiveBtn" type="button">Play other Day Puzzles</button>
-        <button class="linkBtn" id="practiceBtn" type="button">Practice mode</button>
+        <button class="navBtn" id="archiveBtn" type="button" aria-label="Open all puzzles">
+          <span class="navBtnIcon" aria-hidden="true">▦</span>
+          <span>All puzzles</span>
+        </button>
+        <span class="progressLine" id="progressLine"></span>
       </section>
 
       <p class="creditLine">Created by Olin Kealoha Lagon</p>
@@ -100,9 +110,10 @@
       </div>
       <div class="modalBody">
         <p>Select 4 words that belong together, then press Submit.</p>
-        <p>Find 4 groups of 4. You have 4 mistakes.</p>
-        <p>Tip: Use Shuffle if the board feels stuck.</p>
-        <p>To play any of the 80 day puzzles, select Play other Day Puzzles.</p>
+        <p>Find 4 groups of 4. You have 4 mistakes per puzzle.</p>
+        <p>The goal is to solve all 80 puzzles. Tap All puzzles at the bottom to pick any unsolved one.</p>
+        <p>Fail a puzzle and it locks for 24 hours. You must come back to it. Solved puzzles stay solved forever.</p>
+        <p>Tip: Use Shuffle if the board feels stuck. Use Hint once per puzzle to highlight one group.</p>
       </div>
       <div class="modalBottom">
         <button class="btn primary" data-close="howModal" type="button">Got it</button>
@@ -113,31 +124,45 @@
   <dialog class="modal" id="statsModal" aria-labelledby="statsTitle">
     <div class="modalInner">
       <div class="modalTop">
-        <h2 id="statsTitle">Stats</h2>
+        <h2 id="statsTitle">Progress</h2>
         <button class="iconBtn" data-close="statsModal" type="button" aria-label="Close">✕</button>
       </div>
       <div class="modalBody">
         <div class="statsGrid">
           <div class="statCard">
-            <div class="statNum" id="statPlayed">0</div>
-            <div class="statLbl">Played</div>
+            <div class="statNum" id="statSolved">0</div>
+            <div class="statLbl">Solved</div>
+          </div>
+          <div class="statCard">
+            <div class="statNum" id="statRemaining">80</div>
+            <div class="statLbl">Remaining</div>
+          </div>
+          <div class="statCard">
+            <div class="statNum" id="statAttempts">0</div>
+            <div class="statLbl">Attempts</div>
           </div>
           <div class="statCard">
             <div class="statNum" id="statWinPct">0%</div>
             <div class="statLbl">Win %</div>
           </div>
-          <div class="statCard">
-            <div class="statNum" id="statStreak">0</div>
-            <div class="statLbl">Streak</div>
-          </div>
-          <div class="statCard">
-            <div class="statNum" id="statBest">0</div>
-            <div class="statLbl">Best streak</div>
-          </div>
         </div>
+
+        <section class="reminderSection" aria-label="Reminders">
+          <div class="reminderTop">
+            <div>
+              <h3>Reminders</h3>
+              <p class="reminderHelp">Get a friendly nudge when you have not played today. Works best when Rootz is installed to your home screen.</p>
+            </div>
+            <label class="switch" for="reminderToggle">
+              <input type="checkbox" id="reminderToggle">
+              <span class="slider" aria-hidden="true"></span>
+            </label>
+          </div>
+          <p class="reminderStatus" id="reminderStatus"></p>
+        </section>
       </div>
       <div class="modalBottom">
-        <button class="btn ghost" id="resetStatsBtn" type="button">Reset stats</button>
+        <button class="btn ghost" id="resetStatsBtn" type="button">Reset progress</button>
         <button class="btn primary" data-close="statsModal" type="button">Close</button>
       </div>
     </div>
@@ -151,11 +176,32 @@
       </div>
       <div class="modalBody">
         <div class="resultLine" id="endSummary"></div>
-        <div class="resultGrid" id="resultGrid" aria-label="Result grid"></div>
+        <p class="resultDetail" id="endDetail"></p>
       </div>
       <div class="modalBottom">
-        <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+        <button class="btn ghost" id="endNextBtn" type="button">Next puzzle</button>
         <button class="btn primary" data-close="endModal" type="button">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal modal-wide" id="pickerModal" aria-labelledby="pickerTitle">
+    <div class="modalInner">
+      <div class="modalTop">
+        <h2 id="pickerTitle">All puzzles</h2>
+        <button class="iconBtn" data-close="pickerModal" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="pickerLegend" aria-hidden="true">
+          <span class="legSwatch legSolved">✓</span><span class="legLbl">Solved</span>
+          <span class="legSwatch legAttempted"></span><span class="legLbl">Attempted</span>
+          <span class="legSwatch legLocked">🔒</span><span class="legLbl">Locked for 24h</span>
+          <span class="legSwatch legUnsolved"></span><span class="legLbl">New</span>
+        </div>
+        <div class="puzzleGrid" id="puzzleGrid" role="grid" aria-label="All puzzles"></div>
+      </div>
+      <div class="modalBottom">
+        <button class="btn primary" data-close="pickerModal" type="button">Close</button>
       </div>
     </div>
   </dialog>
@@ -191,26 +237,6 @@
       </div>
       <div class="modalBottom">
         <button class="btn primary" data-close="gamesModal" type="button">Close</button>
-      </div>
-    </div>
-  </dialog>
-
-  <dialog class="modal" id="archiveModal" aria-labelledby="archiveTitle">
-    <div class="modalInner">
-      <div class="modalTop">
-        <h2 id="archiveTitle">Play other Day Puzzles</h2>
-        <button class="iconBtn" data-close="archiveModal" type="button" aria-label="Close">✕</button>
-      </div>
-      <div class="modalBody">
-        <div class="archiveRow">
-          <label class="archiveLabel" for="archiveSelect">Puzzle</label>
-          <select id="archiveSelect" class="select"></select>
-          <button class="btn primary" id="openArchiveSelectedBtn" type="button">Play</button>
-        </div>
-        <p class="hint">Playing other days does not affect your daily streak.</p>
-      </div>
-      <div class="modalBottom">
-        <button class="btn primary" data-close="archiveModal" type="button">Close</button>
       </div>
     </div>
   </dialog>
