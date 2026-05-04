@@ -17,7 +17,6 @@ const els = {
   controls: document.getElementById("controls"),
   hintBtn: document.getElementById("hintBtn"),
   shuffleBtn: document.getElementById("shuffleBtn"),
-  clearBtn: document.getElementById("clearBtn"),
   submitBtn: document.getElementById("submitBtn"),
   howBtn: document.getElementById("howBtn"),
   statsBtn: document.getElementById("statsBtn"),
@@ -518,11 +517,6 @@ function initGame(puzzles, requestedId = null) {
   const solvedWords = new Set(state.solved.flatMap(s => s.words));
   state.board = state.board.filter(w => !solvedWords.has(w));
 
-  function clearSelection() {
-    state.selected = [];
-    render(state);
-  }
-
   function shuffleBoard() {
     for (let k = state.board.length - 1; k > 0; k--) {
       const j = Math.floor(Math.random() * (k + 1));
@@ -645,7 +639,6 @@ function initGame(puzzles, requestedId = null) {
   }
 
   els.submitBtn.onclick = submit;
-  els.clearBtn.onclick = clearSelection;
   els.shuffleBtn.onclick = shuffleBoard;
   if (els.hintBtn) els.hintBtn.onclick = useHint;
 

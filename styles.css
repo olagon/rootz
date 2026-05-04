@@ -423,8 +423,8 @@ button:focus-visible{
 .controls{
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.45rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
 }
 
 .btn{
@@ -1049,7 +1049,7 @@ footer .footer-version{
   .board{ gap: 0.5rem; }
   .boardWrap{ padding: 0.85rem; }
   .tile{ font-size: clamp(0.85rem, 2vw, 1rem); min-height: 72px; padding: 0.7rem 0.5rem; }
-  .controls{ grid-template-columns: 1fr 1fr 1fr 1.5fr; gap: 0.5rem; }
+  .controls{ grid-template-columns: 1fr 1fr 1.5fr; gap: 0.55rem; }
   .archiveRow{ grid-template-columns: auto 1fr auto; align-items: center; }
 }
 
@@ -1072,8 +1072,8 @@ footer .footer-version{
   .boardWrap{ padding: 0.5rem; }
   .board{ gap: 0.3rem; }
   .tile{ min-height: 58px; padding: 0.45rem 0.25rem; }
-  .controls{ grid-template-columns: 1fr 1fr; gap: 0.4rem; }
-  .btn{ padding: 0.7rem 0.6rem; font-size: 0.9rem; }
+  .controls{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; }
+  .btn{ padding: 0.7rem 0.5rem; font-size: 0.9rem; }
 }
 
 /* Landscape on short phones */
